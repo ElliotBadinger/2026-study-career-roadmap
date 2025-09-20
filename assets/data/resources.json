@@ -1,0 +1,18 @@
+[
+  {"name":"Khetha: Understanding Matric Results","url":"https://www.careerhelp.org.za/content/understanding-matric-results","description":"Official guidance on NSC results, passes, and what they unlock.","category":"Guidance","region":"ZA"},
+  {"name":"WCED: National Senior Certificate (NSC) Exams","url":"https://www.westerncape.gov.za/education/national-senior-certificate-nsc-exams-june","description":"Western Cape Education Department resources, papers, memos, and support.","category":"Past Papers","region":"ZA"},
+  {"name":"Siyavula","url":"https://www.siyavula.com/","description":"Open textbooks and interactive practice for Maths, Science, and Mathematical Literacy.","category":"Study Platform","region":"ZA"},
+  {"name":"Siyavula: Practise Past Papers","url":"https://www.siyavula.com/products/past-papers","description":"Curriculum-aligned past papers with worked solutions for practice.","category":"Past Papers","region":"ZA"},
+  {"name":"Woza Matrics","url":"https://www.wozamatrics.co.za/","description":"Catch-up video lessons and support for Grade 12 learners.","category":"Study Platform","region":"ZA"},
+  {"name":"Paper Video","url":"https://www.papervideo.co.za/","description":"Free tutorial videos and exam-type questions for key Matric subjects.","category":"Study Platform","region":"ZA"},
+  {"name":"Central Applications Office (CAO) Quiz","url":"https://www.cao.ac.za/Quiz.aspx","description":"Quick working-personality/career fit questionnaire (KZN/partner context).","category":"Assessments","region":"ZA"},
+  {"name":"123test: Career Test (RIASEC)","url":"https://www.123test.com/career-test/","description":"Free Holland Code (RIASEC) test suggesting occupations.","category":"Assessments","region":"Global"},
+  {"name":"PACE Questionnaire (Dept of Employment & Labour)","url":"https://www.nasi-ispani.co.za/take-the-pace-questionnaire/","description":"Short aptitude and interests survey for career direction.","category":"Assessments","region":"ZA"},
+  {"name":"FundiConnect: Career Tests for SA Students","url":"https://fundiconnect.co.za/career-tests-for-south-african-students/","description":"Local test roundup and links to SA-relevant assessments.","category":"Assessments","region":"ZA"},
+  {"name":"NSFAS (National Student Financial Aid Scheme)","url":"https://www.nsfas.org.za/","description":"Government bursary for eligible students at public HEIs and TVETs.","category":"Funding","region":"ZA"},
+  {"name":"NSFAS Bursary Guidelines 2025 (PDF)","url":"https://www.nsfas.org.za/content/downloads/NSFAS%20Bursary%20Guidelines%202025.pdf","description":"Official guidelines covering eligibility, documents, and process.","category":"Funding","region":"ZA"},
+  {"name":"Funza Lushaka Bursary Programme","url":"https://www.funzalushaka.doe.gov.za/","description":"Government bursary prioritizing teacher education (incl. Foundation Phase).","category":"Funding","region":"ZA"},
+  {"name":"DHET: 2024 National List of Occupations in High Demand (PDF)","url":"https://www.gov.za/sites/default/files/gcis_document/202404/50510gen2414.pdf","description":"National view of high-demand occupations to inform study choices.","category":"Guidance","region":"ZA"},
+  {"name":"UJ Undergraduate Prospectus 2026 (Management Services/Operations)","url":"https://mydigitalpublication.co.za/uj/undergraduate-prospectus-2026/62/","description":"APS guidance and program info for UJ diplomas that accept Math Lit.","category":"Programs","region":"ZA"},
+  {"name":"Wits CCDU: Psychometric Career Assessments","url":"https://www.wits.ac.za/ccdu/career-development-services/career-assessments/","description":"University-backed career assessment services and guidance.","category":"Assessments","region":"ZA"}
+]

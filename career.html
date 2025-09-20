@@ -1,0 +1,1994 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your 2026 Study & Career Roadmap: From Uncertainty to Opportunity</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Minimal overrides for tables, forms, print -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+    <style>
+        :root {
+            --primary: #1e40af;
+            --secondary: #059669;
+            --accent: #dc2626;
+            --neutral: #374151;
+            --base-100: #ffffff;
+            --base-200: #f8fafc;
+            --base-300: #e2e8f0;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--neutral);
+            line-height: 1.7;
+        }
+        
+        .font-display {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #06b6d4 100%);
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, #1e40af, #059669);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .toc-fixed {
+            position: fixed;
+            left: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 280px;
+            max-height: 80vh;
+            overflow-y: auto;
+            z-index: 50;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--base-300);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        
+        .content-main {
+            margin-left: 320px;
+            max-width: 900px;
+        }
+        
+        .citation-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s ease;
+        }
+        
+        .citation-link:hover {
+            border-bottom-color: var(--primary);
+        }
+        
+        .alert-urgent {
+            background: linear-gradient(135deg, #fef2f2, #fee2e2);
+            border-left: 4px solid var(--accent);
+        }
+        
+        .alert-success {
+            background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+            border-left: 4px solid var(--secondary);
+        }
+        
+        .alert-info {
+            background: linear-gradient(135deg, #eff6ff, #dbeafe);
+            border-left: 4px solid var(--primary);
+        }
+        
+        @media (max-width: 1200px) {
+            .toc-fixed {
+                display: none;
+            }
+            .content-main {
+                margin-left: 0;
+                max-width: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .content-main {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+
+            .hero-section .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-section .font-display.text-5xl {
+                font-size: 2.25rem;
+                line-height: 2.5rem;
+            }
+
+            .hero-section .text-xl {
+                font-size: 1rem;
+            }
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .bento-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            border: 1px solid var(--base-300);
+            transition: all 0.3s ease;
+        }
+        
+        .bento-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .progress-bar {
+            height: 8px;
+            background: var(--base-300);
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 1rem 0;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 4px;
+            transition: width 0.6s ease;
+        }
+        
+        .quote-block {
+            border-left: 4px solid var(--primary);
+            background: var(--base-200);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+            font-size: 1.1rem;
+        }
+
+        /* Mermaid diagram styling */
+        .mermaid-container {
+            display: flex;
+            justify-content: center;
+            min-height: 300px;
+            max-height: 800px;
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mermaid-container .mermaid {
+            width: 100%;
+            max-width: 100%;
+            height: 100%;
+            cursor: grab;
+            transition: transform 0.3s ease;
+            transform-origin: center center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            touch-action: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .mermaid-container .mermaid svg {
+            max-width: 100%;
+            height: 100%;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .mermaid-container .mermaid:active {
+            cursor: grabbing;
+        }
+
+        .mermaid-container.zoomed .mermaid {
+            height: 100%;
+            width: 100%;
+            cursor: grab;
+        }
+
+        .mermaid-controls {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            display: flex;
+            gap: 10px;
+            z-index: 20;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 8px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .mermaid-control-btn {
+            background: #ffffff;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            padding: 10px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: #374151;
+            font-size: 14px;
+            min-width: 36px;
+            height: 36px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mermaid-control-btn:hover {
+            background: #f8fafc;
+            border-color: #3b82f6;
+            color: #3b82f6;
+            transform: translateY(-1px);
+        }
+
+        .mermaid-control-btn:active {
+            transform: scale(0.95);
+        }
+
+        /* Override mermaid default styles for better contrast and unified styling */
+        .mermaid .node rect,
+        .mermaid .node circle,
+        .mermaid .node ellipse,
+        .mermaid .node polygon {
+            stroke-width: 2px !important;
+            stroke: var(--primary) !important;
+        }
+        
+        .mermaid .node .label,
+        .mermaid .nodeLabel {
+            color: var(--neutral) !important;
+            font-weight: 600 !important;
+            font-size: 14px !important;
+            font-family: 'Inter', sans-serif !important;
+        }
+        
+        .mermaid .edgePath .path {
+            stroke: var(--primary) !important;
+            stroke-width: 2px !important;
+        }
+        
+        .mermaid .edgeLabel {
+            background-color: white !important;
+            color: var(--neutral) !important;
+            font-weight: 600 !important;
+            padding: 4px 8px !important;
+            border-radius: 4px !important;
+            border: 1px solid var(--base-300) !important;
+        }
+        
+        /* Enhanced node styling for better contrast */
+        .mermaid .node[style*="fill:#dbeafe"] rect,
+        .mermaid .node[style*="fill:#dbeafe"] circle,
+        .mermaid .node[style*="fill:#dbeafe"] ellipse,
+        .mermaid .node[style*="fill:#dbeafe"] polygon {
+            fill: #dbeafe !important;
+            stroke: #1e40af !important;
+            stroke-width: 2px !important;
+        }
+        
+        .mermaid .node[style*="fill:#fef3c7"] rect,
+        .mermaid .node[style*="fill:#fef3c7"] circle,
+        .mermaid .node[style*="fill:#fef3c7"] ellipse,
+        .mermaid .node[style*="fill:#fef3c7"] polygon {
+            fill: #fef3c7 !important;
+            stroke: #d97706 !important;
+            stroke-width: 2px !important;
+        }
+        
+        .mermaid .node[style*="fill:#fee2e2"] rect,
+        .mermaid .node[style*="fill:#fee2e2"] circle,
+        .mermaid .node[style*="fill:#fee2e2"] ellipse,
+        .mermaid .node[style*="fill:#fee2e2"] polygon {
+            fill: #fee2e2 !important;
+            stroke: #dc2626 !important;
+            stroke-width: 2px !important;
+        }
+        
+        .mermaid .node[style*="fill:#dcfce7"] rect,
+        .mermaid .node[style*="fill:#dcfce7"] circle,
+        .mermaid .node[style*="fill:#dcfce7"] ellipse,
+        .mermaid .node[style*="fill:#dcfce7"] polygon {
+            fill: #dcfce7 !important;
+            stroke: #059669 !important;
+            stroke-width: 2px !important;
+        }
+        
+        .mermaid .node[style*="fill:#e0e7ff"] rect,
+        .mermaid .node[style*="fill:#e0e7ff"] circle,
+        .mermaid .node[style*="fill:#e0e7ff"] ellipse,
+        .mermaid .node[style*="fill:#e0e7ff"] polygon {
+            fill: #e0e7ff !important;
+            stroke: #4f46e5 !important;
+            stroke-width: 2px !important;
+        }
+        
+        .mermaid .node[style*="fill:#f1f5f9"] rect,
+        .mermaid .node[style*="fill:#f1f5f9"] circle,
+        .mermaid .node[style*="fill:#f1f5f9"] ellipse,
+        .mermaid .node[style*="fill:#f1f5f9"] polygon {
+            fill: #f1f5f9 !important;
+            stroke: #64748b !important;
+            stroke-width: 2px !important;
+        }
+        
+        /* Ensure text contrast for all node types */
+        .mermaid .node[style*="fill:#dbeafe"] .label,
+        .mermaid .node[style*="fill:#dbeafe"] .nodeLabel {
+            color: #1e40af !important;
+            font-weight: 700 !important;
+        }
+        
+        .mermaid .node[style*="fill:#fef3c7"] .label,
+        .mermaid .node[style*="fill:#fef3c7"] .nodeLabel {
+            color: #92400e !important;
+            font-weight: 700 !important;
+        }
+        
+        .mermaid .node[style*="fill:#fee2e2"] .label,
+        .mermaid .node[style*="fill:#fee2e2"] .nodeLabel {
+            color: #991b1b !important;
+            font-weight: 700 !important;
+        }
+        
+        .mermaid .node[style*="fill:#dcfce7"] .label,
+        .mermaid .node[style*="fill:#dcfce7"] .nodeLabel {
+            color: #166534 !important;
+            font-weight: 700 !important;
+        }
+        
+        .mermaid .node[style*="fill:#e0e7ff"] .label,
+        .mermaid .node[style*="fill:#e0e7ff"] .nodeLabel {
+            color: #312e81 !important;
+            font-weight: 700 !important;
+        }
+        
+        .mermaid .node[style*="fill:#f1f5f9"] .label,
+        .mermaid .node[style*="fill:#f1f5f9"] .nodeLabel {
+            color: #334155 !important;
+            font-weight: 700 !important;
+        }
+    </style>
+  </head>
+
+  <body class="bg-gray-50">
+    <!-- Fixed Table of Contents -->
+    <nav class="toc-fixed" style="overscroll-behavior: contain;">
+      <h3 class="font-display font-semibold text-lg mb-4 text-gray-800">Navigation Guide</h3>
+      <ul class="space-y-2 text-sm">
+        <li>
+          <a href="#executive-summary" class="citation-link">Executive Summary</a>
+        </li>
+        <li>
+          <a href="#current-standing" class="citation-link">Part 1: Current Standing</a>
+          <ul class="ml-4 mt-1 space-y-1 text-xs">
+            <li>
+              <a href="#viability-analysis" class="citation-link">Viability Analysis</a>
+            </li>
+            <li>
+              <a href="#goal-posts" class="citation-link">Goal Posts</a>
+            </li>
+            <li>
+              <a href="#study-plan" class="citation-link">Study Plan</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#career-discovery" class="citation-link">Part 2: Career Discovery</a>
+          <ul class="ml-4 mt-1 space-y-1 text-xs">
+            <li>
+              <a href="#assessment-tools" class="citation-link">Assessment Tools</a>
+            </li>
+            <li>
+              <a href="#decision-matrix" class="citation-link">Decision Matrix</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#career-clusters" class="citation-link">Part 3: Career Clusters</a>
+          <ul class="ml-4 mt-1 space-y-1 text-xs">
+            <li>
+              <a href="#education-cluster" class="citation-link">Education</a>
+            </li>
+            <li>
+              <a href="#business-cluster" class="citation-link">Business & Logistics</a>
+            </li>
+            <li>
+              <a href="#hr-cluster" class="citation-link">HR & Public Admin</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#financial-plan" class="citation-link">Part 4: Financial Plan</a>
+        </li>
+        <li>
+          <a href="#action-plan" class="citation-link">Part 5: Action Plan</a>
+        </li>
+        <li>
+          <a href="#tools" class="citation-link">Tools</a>
+          <ul class="ml-4 mt-1 space-y-1 text-xs">
+            <li><a href="#aps-calculator" class="citation-link">APS Calculator</a></li>
+            <li><a href="#study-planner" class="citation-link">Study Planner</a></li>
+            <li><a href="#funding-wizard" class="citation-link">Funding Wizard</a></li>
+            <li><a href="#action-checklist" class="citation-link">Action Checklist</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#resources" class="citation-link">Resources</a>
+        </li>
+      </ul>
+    </nav>
+
+    <main class="content-main px-8 py-12">
+      <!-- Hero Section -->
+      <section class="hero-section mb-16">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h1 class="font-display text-5xl font-bold mb-6 text-gradient italic leading-tight">
+              Your 2026 Study & Career Roadmap
+            </h1>
+            <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+              From Uncertainty to Opportunity: A Scientific Approach to Discovering Your Path
+            </p>
+            <div class="flex items-center space-x-4 text-sm text-gray-500">
+              <span class="flex items-center">
+                <i class="fas fa-calendar mr-2"></i>
+                Strategic Planning for 2026
+              </span>
+              <span class="flex items-center">
+                <i class="fas fa-chart-line mr-2"></i>
+                Data-Driven Insights
+              </span>
+            </div>
+          </div>
+          <div class="relative">
+            <img src="https://kimi-img.moonshot.cn/pub/icon/spinner.svg" alt="Graduation cap and academic books" class="w-full h-80 object-cover rounded-2xl shadow-2xl" referrerpolicy="no-referrer" loading="lazy" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Executive Summary -->
+      <section id="executive-summary" class="mb-16">
+        <div class="alert-urgent p-6 rounded-xl mb-8">
+          <div class="flex items-start space-x-4">
+            <i class="fas fa-exclamation-triangle text-red-600 text-2xl mt-1"></i>
+            <div>
+              <h3 class="font-display font-semibold text-xl mb-3 text-red-800">Critical Reality Check</h3>
+              <p class="text-red-700 leading-relaxed">
+                Based on your current academic standing, your previous National Senior Certificate (NSC) statement cannot be used for any higher education applications. Your June 2025 results, while showing strengths in languages, are not sufficient for a provisional offer due to a failing mark in Accounting. <strong>Your entire future for 2026 hinges on your final exams in November 2025.</strong> You must achieve at least a Higher Certificate Pass to have any study options, with a Diploma Pass being a more realistic and valuable goal.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bento-grid">
+          <div class="bento-card card-hover">
+            <div class="flex items-center mb-4">
+              <i class="fas fa-target text-blue-600 text-2xl mr-3"></i>
+              <h3 class="font-display font-semibold text-lg">Immediate Priority</h3>
+            </div>
+            <p class="text-gray-600">November 2025 final exams are the single most critical event determining your 2026 academic future.</p>
+          </div>
+
+          <div class="bento-card card-hover">
+            <div class="flex items-center mb-4">
+              <i class="fas fa-chart-line text-green-600 text-2xl mr-3"></i>
+              <h3 class="font-display font-semibold text-lg">Realistic Goal</h3>
+            </div>
+            <p class="text-gray-600">Diploma Pass (APS 19) is achievable and opens significant career-focused qualification pathways.</p>
+          </div>
+
+          <div class="bento-card card-hover">
+            <div class="flex items-center mb-4">
+              <i class="fas fa-users text-purple-600 text-2xl mr-3"></i>
+              <h3 class="font-display font-semibold text-lg">Learning Advantage</h3>
+            </div>
+            <p class="text-gray-600">Leverage your social learning style through virtual study groups and accountability partnerships.</p>
+          </div>
+
+          <div class="bento-card card-hover">
+            <div class="flex items-center mb-4">
+              <i class="fas fa-search text-amber-600 text-2xl mr-3"></i>
+              <h3 class="font-display font-semibold text-lg">Career Discovery</h3>
+            </div>
+            <p class="text-gray-600">Scientific assessment tools will guide you toward careers matching your strengths and interests.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Part 1: Current Standing -->
+      <section id="current-standing" class="mb-16">
+        <h2 class="font-display text-4xl font-semibold mb-8 text-gray-800">Part 1: Your Current Standing & The Immediate Action Plan</h2>
+
+        <!-- Viability Analysis -->
+        <div id="viability-analysis" class="mb-12">
+          <h3 class="font-display text-2xl font-semibold mb-6 text-gray-700">Honest Analysis of Your Application Viability</h3>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <div class="bg-red-50 border border-red-200 rounded-xl p-6">
+              <h4 class="font-semibold text-lg mb-4 text-red-800 flex items-center">
+                <i class="fas fa-times-circle mr-2"></i>
+                Previous NSC Statement
+              </h4>
+              <p class="text-red-700 mb-4">
+                Your previous statement explicitly states: <strong>"The candidate does not qualify for the National Senior Certificate"</strong>
+              </p>
+              <ul class="text-red-600 text-sm space-y-2">
+                <li>• Cannot be used for any higher education applications</li>
+                <li>• No institution will consider applications without valid NSC</li>
+                <li>• Focus must be entirely on current academic year</li>
+              </ul>
+            </div>
+
+            <div class="bg-yellow-50 border border-yellow-200 rounded-xl p-6">
+              <h4 class="font-semibold text-lg mb-4 text-yellow-800 flex items-center">
+                <i class="fas fa-exclamation-triangle mr-2"></i>
+                June 2025 Results
+              </h4>
+              <div class="text-yellow-700 mb-4">
+                <p class="font-semibold">Term 2 Average: 53%</p>
+                <p class="text-sm">Critical failure in Accounting: 23% (Level 1)</p>
+              </div>
+              <ul class="text-yellow-600 text-sm space-y-2">
+                <li>• Failing mark disqualifies provisional offers</li>
+                <li>• Insufficient for competitive admissions</li>
+                <li>• Strong languages (isiZulu 70%, LO 76%) show potential</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="quote-block">
+            "The November 2025 final examinations are the single most critical event that will determine your entire academic and professional future for 2026. Your performance in these exams will dictate whether you qualify for a Higher Certificate, Diploma, or Bachelor's pass."
+          </div>
+        </div>
+
+        <!-- Goal Posts -->
+        <div id="goal-posts" class="mb-12">
+          <h3 class="font-display text-2xl font-semibold mb-6 text-gray-700">The Goal Posts for November 2025: NSC Pass Requirements</h3>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-blue-50 border-2 border-blue-200 rounded-xl p-6 card-hover">
+              <div class="flex items-center mb-4">
+                <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">23</div>
+                <div>
+                  <h4 class="font-semibold text-lg text-blue-800">Bachelor's Pass</h4>
+                  <p class="text-blue-600 text-sm">APS Requirement</p>
+                </div>
+              </div>
+              <ul class="text-blue-700 text-sm space-y-2">
+                <li>• 40% in Home Language</li>
+                <li>• 50% in 4 high-credit subjects</li>
+                <li>• 30% in 2 other subjects</li>
+                <li>• Pass 6 of 7 subjects</li>
+              </ul>
+              <div class="mt-4 p-3 bg-blue-100 rounded-lg">
+                <p class="text-blue-800 font-medium">Access: University degree programs</p>
+              </div>
+            </div>
+
+            <div class="bg-green-50 border-2 border-green-200 rounded-xl p-6 card-hover">
+              <div class="flex items-center mb-4">
+                <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">19</div>
+                <div>
+                  <h4 class="font-semibold text-lg text-green-800">Diploma Pass</h4>
+                  <p class="text-green-600 text-sm">APS Requirement</p>
+                </div>
+              </div>
+              <ul class="text-green-700 text-sm space-y-2">
+                <li>• 40% in Home Language</li>
+                <li>• 40% in 4 high-credit subjects</li>
+                <li>• 30% in 2 other subjects</li>
+                <li>• Pass 6 of 7 subjects</li>
+              </ul>
+              <div class="mt-4 p-3 bg-green-100 rounded-lg">
+                <p class="text-green-800 font-medium">Access: Diploma programs at universities of technology and TVET colleges</p>
+              </div>
+            </div>
+
+            <div class="bg-purple-50 border-2 border-purple-200 rounded-xl p-6 card-hover">
+              <div class="flex items-center mb-4">
+                <div class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">15</div>
+                <div>
+                  <h4 class="font-semibold text-lg text-purple-800">Higher Certificate</h4>
+                  <p class="text-purple-600 text-sm">APS Requirement</p>
+                </div>
+              </div>
+              <ul class="text-purple-700 text-sm space-y-2">
+                <li>• 40% in Home Language</li>
+                <li>• 40% in 2 other subjects</li>
+                <li>• 30% in 3 other subjects</li>
+                <li>• Pass 6 of 7 subjects</li>
+              </ul>
+              <div class="mt-4 p-3 bg-purple-100 rounded-lg">
+                <p class="text-purple-800 font-medium">Access: Higher certificate programs at TVET colleges and some universities</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-8 text-sm text-gray-600">
+            <p>Source: <a href="https://www.sacap.edu.za/blog/applied-psychology/what-are-the-different-types-of-matric-passes/" class="citation-link">[1]</a>
+              <a href="https://www.onlinecareerguidance.co.za/2025/01/14/grade-12-pass-requirements/" class="citation-link">[2]</a>
+            </p>
+          </div>
+        </div>
+
+        <!-- Study Plan -->
+        <div id="study-plan" class="mb-12">
+          <h3 class="font-display text-2xl font-semibold mb-6 text-gray-700">A Tailored Study Plan for a Social Learner</h3>
+
+          <div class="alert-info p-6 rounded-xl mb-8">
+            <div class="flex items-start space-x-4">
+              <i class="fas fa-lightbulb text-blue-600 text-2xl mt-1"></i>
+              <div>
+                <h4 class="font-semibold text-lg mb-2">Leveraging Your Social Learning Style</h4>
+                <p class="text-blue-700">
+                  As a social learner, you thrive in collaborative environments where you can interact with others, share ideas, and learn through discussion. This is a significant advantage for your intensive study period leading up to November 2025.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <div class="bg-white border border-gray-200 rounded-xl p-6">
+              <h4 class="font-semibold text-lg mb-4 flex items-center text-gray-800">
+                <i class="fas fa-users text-blue-600 mr-3"></i>
+                Virtual Study Groups
+              </h4>
+              <ul class="space-y-3 text-gray-700">
+                <li class="flex items-start">
+                  <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                  <span>Use WhatsApp, Microsoft Teams, or Zoom for regular sessions</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                  <span>Set clear goals: 2-hour sessions twice weekly</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                  <span>Assign topics to different members for presentation</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                  <span>Work through past exam papers collaboratively</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="bg-white border border-gray-200 rounded-xl p-6">
+              <h4 class="font-semibold text-lg mb-4 flex items-center text-gray-800">
+                <i class="fas fa-handshake text-green-600 mr-3"></i>
+                Accountability Partnership
+              </h4>
+              <ul class="space-y-3 text-gray-700">
+                <li class="flex items-start">
+                  <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                  <span>Find a study buddy for regular check-ins</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                  <span>Share weekly goals and progress reports</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                  <span>Provide mutual support and encouragement</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                  <span>Celebrate small victories together</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-xl p-6 mb-8">
+            <h4 class="font-semibold text-lg mb-4 text-blue-800">Free Online Resources for Your Subjects</h4>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <h5 class="font-medium mb-2 text-blue-700">Official Resources</h5>
+                <ul class="text-sm text-blue-600 space-y-1">
+                  <li>• Department of Basic Education (past papers)</li>
+                  <li>• Western Cape Education Department <a href="https://www.westerncape.gov.za/education/national-senior-certificate-nsc-exams-june" class="citation-link">[3]</a>
+                  </li>
+                  <li>• Siyavula (Mathematical Literacy)</li>
+                </ul>
+              </div>
+              <div>
+                <h5 class="font-medium mb-2 text-blue-700">Supplementary Learning</h5>
+                <ul class="text-sm text-blue-600 space-y-1">
+                  <li>• Khan Academy (Accounting, Business Studies)</li>
+                  <li>• YouTube channels for Grade 12 subjects</li>
+                  <li>• Online study groups and forums</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Part 2: Career Discovery -->
+      <section id="career-discovery" class="mb-16">
+        <h2 class="font-display text-4xl font-semibold mb-8 text-gray-800">Part 2: A Scientific Methodology for Discovering Your Path</h2>
+
+        <div id="assessment-tools" class="mb-12">
+          <h3 class="font-display text-2xl font-semibold mb-6 text-gray-700">Recommended Career Assessment Tools</h3>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div class="bg-white border-2 border-blue-200 rounded-xl p-6 card-hover">
+              <div class="flex items-center mb-4">
+                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                  <i class="fas fa-brain text-blue-600 text-2xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-lg text-blue-800">Truity Holland Code</h4>
+                  <p class="text-blue-600 text-sm">Scientifically-backed</p>
+                </div>
+              </div>
+              <p class="text-gray-700 text-sm mb-4">
+                Based on RIASEC model - categorizes careers into Realistic, Investigative, Artistic, Social, Enterprising, and Conventional types.
+              </p>
+              <div class="flex items-center text-sm text-blue-600">
+                <i class="fas fa-clock mr-2"></i>
+                <span>Takes 10-15 minutes</span>
+              </div>
+              <p class="text-xs text-gray-500 mt-2">
+                <a href="https://www.truity.com/test/holland-code-career-test" class="citation-link">Reference [4]</a>
+              </p>
+            </div>
+
+            <div class="bg-white border-2 border-green-200 rounded-xl p-6 card-hover">
+              <div class="flex items-center mb-4">
+                <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                  <i class="fas fa-briefcase text-green-600 text-2xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-lg text-green-800">O*NET Interest Profiler</h4>
+                  <p class="text-green-600 text-sm">Government-backed</p>
+                </div>
+              </div>
+              <p class="text-gray-700 text-sm mb-4">
+                U.S. Department of Labor tool with direct links to comprehensive career database and job outlook information.
+              </p>
+              <div class="flex items-center text-sm text-green-600">
+                <i class="fas fa-database mr-2"></i>
+                <span>Extensive career data</span>
+              </div>
+              <p class="text-xs text-gray-500 mt-2">
+                Comprehensive occupational information
+              </p>
+            </div>
+
+            <div class="bg-white border-2 border-purple-200 rounded-xl p-6 card-hover">
+              <div class="flex items-center mb-4">
+                <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mr-4">
+                  <i class="fas fa-map-marker-alt text-purple-600 text-2xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-lg text-purple-800">FundiConnect Quiz</h4>
+                  <p class="text-purple-600 text-sm">Local relevance</p>
+                </div>
+              </div>
+              <p class="text-gray-700 text-sm mb-4">
+                South African-based tool linking career suggestions to local study options and funding opportunities.
+              </p>
+              <div class="flex items-center text-sm text-purple-600">
+                <i class="fas fa-graduation-cap mr-2"></i>
+                <span>South African focus</span>
+              </div>
+              <p class="text-xs text-gray-500 mt-2">
+                <a href="https://fundiconnect.co.za/career-tests-for-south-african-students/" class="citation-link">Reference [5]</a>
+              </p>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-r from-gray-50 to-blue-50 border border-gray-200 rounded-xl p-6 mb-8">
+            <h4 class="font-semibold text-lg mb-4 text-gray-800">How to Use These Tools Effectively</h4>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <h5 class="font-medium mb-2 text-blue-700">Step 1: Take All Three Assessments</h5>
+                <ul class="text-sm text-gray-700 space-y-1">
+                  <li>• Set aside dedicated time (10-30 minutes each)</li>
+                  <li>• Be completely honest in your responses</li>
+                  <li>• Save or print your results</li>
+                </ul>
+              </div>
+              <div>
+                <h5 class="font-medium mb-2 text-blue-700">Step 2: Cross-Reference Results</h5>
+                <ul class="text-sm text-gray-700 space-y-1">
+                  <li>• Look for overlapping career suggestions</li>
+                  <li>• Identify common skills and work environments</li>
+                  <li>• Note recurring themes across all three tests</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="decision-matrix" class="mb-12">
+          <h3 class="font-display text-2xl font-semibold mb-6 text-gray-700">Creating Your Personal Decision Matrix</h3>
+
+          <div class="bg-white border border-gray-200 rounded-xl p-6 mb-8">
+            <p class="text-gray-700 mb-6">
+              Transform your abstract assessment results into a concrete decision-making tool. This matrix helps you systematically compare career options against key criteria that matter to you.
+            </p>
+
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-sm text-gray-600">Editable matrix. Your entries are saved locally to this device.</div>
+              <div class="flex gap-2">
+                <button id="matrix-add-row" class="px-3 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 text-sm">
+                  <i class="fas fa-plus mr-2"></i>Add row
+                </button>
+                <button id="matrix-clear" class="px-3 py-2 bg-gray-100 text-gray-800 rounded hover:bg-gray-200 text-sm">
+                  <i class="fas fa-eraser mr-2"></i>Clear
+                </button>
+                <button id="matrix-export" class="px-3 py-2 bg-green-600 text-white rounded hover:bg-green-700 text-sm">
+                  <i class="fas fa-file-csv mr-2"></i>Export CSV
+                </button>
+              </div>
+            </div>
+
+            <div class="overflow-x-auto">
+              <table class="w-full border-collapse border border-gray-300 text-sm">
+                <thead>
+                  <tr class="bg-gray-100">
+                    <th class="border border-gray-300 p-3 text-left font-semibold">Career Option</th>
+                    <th class="border border-gray-300 p-3 text-center font-semibold">Interest (1-5)</th>
+                    <th class="border border-gray-300 p-3 text-center font-semibold">Skills Match (1-5)</th>
+                    <th class="border border-gray-300 p-3 text-center font-semibold">Job Demand (1-5)</th>
+                    <th class="border border-gray-300 p-3 text-left font-semibold">Qualification</th>
+                    <th class="border border-gray-300 p-3 text-center font-semibold">Funding</th>
+                    <th class="border border-gray-300 p-3 text-center font-semibold">Total</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="bg-blue-50">
+                    <td class="border border-gray-300 p-3 font-medium">Foundation Phase Teacher</td>
+                    <td class="border border-gray-300 p-3 text-center">4</td>
+                    <td class="border border-gray-300 p-3 text-center">4 (Languages)</td>
+                    <td class="border border-gray-300 p-3 text-center">5 (High Demand)</td>
+                    <td class="border border-gray-300 p-3">B.Ed. Degree</td>
+                    <td class="border border-gray-300 p-3 text-center">Yes (Funza Lushaka)</td>
+                    <td class="border border-gray-300 p-3 text-center font-bold text-blue-600">18</td>
+                  </tr>
+                  <tr class="bg-green-50">
+                    <td class="border border-gray-300 p-3 font-medium">Human Resources Officer</td>
+                    <td class="border border-gray-300 p-3 text-center">3</td>
+                    <td class="border border-gray-300 p-3 text-center">3 (People Skills)</td>
+                    <td class="border border-gray-300 p-3 text-center">4 (Moderate Demand)</td>
+                    <td class="border border-gray-300 p-3">Diploma/Degree</td>
+                    <td class="border border-gray-300 p-3 text-center">Yes (NSFAS)</td>
+                    <td class="border border-gray-300 p-3 text-center font-bold text-green-600">14</td>
+                  </tr>
+                  <tr>
+                    <td class="border border-gray-300 p-3 font-medium">Your Option 1</td>
+                    <td class="border border-gray-300 p-3 text-center">?</td>
+                    <td class="border border-gray-300 p-3 text-center">?</td>
+                    <td class="border border-gray-300 p-3 text-center">?</td>
+                    <td class="border border-gray-300 p-3">?</td>
+                    <td class="border border-gray-300 p-3 text-center">?</td>
+                    <td class="border border-gray-300 p-3 text-center font-bold">?</td>
+                  </tr>
+                  <tr>
+                    <td class="border border-gray-300 p-3 font-medium">Your Option 2</td>
+                    <td class="border border-gray-300 p-3 text-center">?</td>
+                    <td class="border border-gray-300 p-3 text-center">?</td>
+                    <td class="border border-gray-300 p-3 text-center">?</td>
+                    <td class="border border-gray-300 p-3">?</td>
+                    <td class="border border-gray-300 p-3 text-center">?</td>
+                    <td class="border border-gray-300 p-3 text-center font-bold">?</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="mt-6 p-4 bg-gray-50 rounded-lg">
+              <h5 class="font-medium mb-2 text-gray-800">How to Use This Matrix:</h5>
+              <ol class="text-sm text-gray-700 space-y-1">
+                <li>1. List 3-5 careers you're considering in the first column</li>
+                <li>2. Score each career from 1-5 for each criterion</li>
+                <li>3. Add up the scores for each career</li>
+                <li>4. The highest-scoring career should be your top priority for research</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Part 3: Career Clusters -->
+      <section id="career-clusters" class="mb-16">
+        <h2 class="font-display text-4xl font-semibold mb-8 text-gray-800">Part 3: Exploring High-Potential Career Clusters</h2>
+
+        <p class="text-gray-700 mb-8 text-lg leading-relaxed">
+          Based on your academic profile—strong language skills, improved Mathematical Literacy, and commerce weaknesses—I've identified high-potential career clusters aligned with your strengths and South Africa's job market demands.
+        </p>
+
+        <!-- Education Cluster -->
+        <div id="education-cluster" class="mb-12">
+          <h3 class="font-display text-2xl font-semibold mb-6 text-blue-700">Cluster A: Education (Foundation Phase Teacher)</h3>
+
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+            <div class="lg:col-span-2 bg-white border border-gray-200 rounded-xl p-6">
+              <h4 class="font-semibold text-lg mb-4 text-gray-800 flex items-center">
+                <i class="fas fa-graduation-cap text-blue-600 mr-3"></i>
+                Job Demand and Security
+              </h4>
+              <div class="space-y-4">
+                <div class="flex items-start space-x-3">
+                  <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <i class="fas fa-chart-line text-blue-600 text-sm"></i>
+                  </div>
+                  <div>
+                    <p class="font-medium text-gray-800">Aging Teacher Workforce</p>
+                    <p class="text-gray-600 text-sm">Nearly half of all teachers expected to be 50+ by 2025, creating retirement wave <a href="https://www.futuresa.co.za/education/teaching-in-south-africa-a-calling-or-a-necessity/" class="citation-link">[6]</a>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex items-start space-x-3">
+                  <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <i class="fas fa-language text-green-600 text-sm"></i>
+                  </div>
+                  <div>
+                    <p class="font-medium text-gray-800">isiZulu Language Advantage</p>
+                    <p class="text-gray-600 text-sm">Critical shortage of teachers proficient in indigenous African languages for Foundation Phase <a href="https://www.sablenetwork.com/pdf/TeacherSupplyandDemand2025.pdf" class="citation-link">[7]</a>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex items-start space-x-3">
+                  <div class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <i class="fas fa-money-bill-wave text-purple-600 text-sm"></i>
+                  </div>
+                  <div>
+                    <p class="font-medium text-gray-800">Funza Lushaka Priority</p>
+                    <p class="text-gray-600 text-sm">Government bursary program specifically prioritizes Foundation Phase teaching <a href="https://www.funzalushaka.doe.gov.za/Content/Documents/Funza%20Lushaka%20Bursary%20Application%20Notes%202025.pdf" class="citation-link">[8]</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-blue-50 border border-blue-200 rounded-xl p-6">
+              <h4 class="font-semibold text-lg mb-4 text-blue-800">Your Language Strengths</h4>
+              <div class="space-y-4">
+                <div>
+                  <div class="flex justify-between items-center mb-2">
+                    <span class="text-blue-700 font-medium">isiZulu FAL</span>
+                    <span class="text-blue-600 font-bold">70%</span>
+                  </div>
+                  <div class="progress-bar">
+                    <div class="progress-fill" style="width: 70%;"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between items-center mb-2">
+                    <span class="text-blue-700 font-medium">English HL</span>
+                    <span class="text-blue-600 font-bold">57%</span>
+                  </div>
+                  <div class="progress-bar">
+                    <div class="progress-fill" style="width: 57%;"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-4 p-3 bg-blue-100 rounded-lg">
+                <p class="text-blue-800 text-sm font-medium">
+                  These marks are your greatest assets for Foundation Phase teaching, where home language instruction is crucial.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-xl p-6">
+            <h4 class="font-semibold text-lg mb-4 text-blue-800">Qualification Pathways</h4>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <h5 class="font-medium mb-2 text-blue-700">University of Johannesburg (UJ)</h5>
+                <ul class="text-sm text-gray-700 space-y-1">
+                  <li>• B.Ed. in Foundation Phase Teaching</li>
+                  <li>• Minimum APS: 28</li>
+                  <li>• Requires 60% in Mathematical Literacy <a href="https://www.uj.ac.za/university-courses/bed-in-foundation-phase-teaching-grade-r-3/" class="citation-link">[9]</a>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h5 class="font-medium mb-2 text-blue-700">Other Institutions</h5>
+                <ul class="text-sm text-gray-700 space-y-1">
+                  <li>• UKZN: Similar B.Ed. program</li>
+                  <li>• TUT: Foundation Phase specialization</li>
+                  <li>• CUT: Requires 50% in English + indigenous language <a href="https://www.cut.ac.za/programmes/foundation-phase-teaching" class="citation-link">[10]</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Business Cluster -->
+        <div id="business-cluster" class="mb-12">
+          <h3 class="font-display text-2xl font-semibold mb-6 text-green-700">Cluster B: Business & Logistics</h3>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+            <div class="bg-white border border-gray-200 rounded-xl p-6">
+              <h4 class="font-semibold text-lg mb-4 text-gray-800 flex items-center">
+                <i class="fas fa-chart-bar text-green-600 mr-3"></i>
+                Job Market Demand
+              </h4>
+              <div class="space-y-4">
+                <div class="p-4 bg-green-50 rounded-lg">
+                  <h5 class="font-medium text-green-800 mb-2">Logistics & Supply Chain</h5>
+                  <p class="text-green-700 text-sm">
+                    High demand due to e-commerce growth and complex global supply chains. Sought-after careers for 2025.
+                  </p>
+                </div>
+
+                <div class="p-4 bg-blue-50 rounded-lg">
+                  <h5 class="font-medium text-blue-800 mb-2">Management Services</h5>
+                  <p class="text-blue-700 text-sm">
+                    Growing need for skilled professionals in operations, management, and business analysis roles.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-green-50 border border-green-200 rounded-xl p-6">
+              <h4 class="font-semibold text-lg mb-4 text-green-800">Qualification Pathways</h4>
+              <div class="space-y-4">
+                <div class="p-3 bg-white rounded-lg border border-green-200">
+                  <h5 class="font-medium text-green-800 mb-1">University of Johannesburg</h5>
+                  <ul class="text-sm text-gray-700 space-y-1">
+                    <li>• Diploma in Management Services</li>
+                    <li>• Diploma in Operations Management</li>
+                    <li>• APS 19-20 with Level 5 in Mathematical Literacy <a href="https://mydigitalpublication.co.za/uj/undergraduate-prospectus-2026/62/" class="citation-link">[11]</a>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="p-3 bg-white rounded-lg border border-green-200">
+                  <h5 class="font-medium text-green-800 mb-1">Other Options</h5>
+                  <ul class="text-sm text-gray-700 space-y-1">
+                    <li>• Higher Certificate in Business</li>
+                    <li>• TVET College Business Programs</li>
+                    <li>• Progression to Diploma level</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 rounded-xl p-6">
+            <h4 class="font-semibold text-lg mb-4 text-green-800">Career Progression</h4>
+            <div class="flex items-center justify-between text-sm">
+              <div class="text-center">
+                <div class="w-12 h-12 bg-green-200 rounded-full flex items-center justify-center mx-auto mb-2">
+                  <i class="fas fa-graduation-cap text-green-700"></i>
+                </div>
+                <p class="font-medium">Diploma</p>
+                <p class="text-gray-600">2-3 years</p>
+              </div>
+              <div class="flex-1 h-1 bg-green-200 mx-4"></div>
+              <div class="text-center">
+                <div class="w-12 h-12 bg-green-300 rounded-full flex items-center justify-center mx-auto mb-2">
+                  <i class="fas fa-briefcase text-green-800"></i>
+                </div>
+                <p class="font-medium">Entry Level</p>
+                <p class="text-gray-600">0-2 years</p>
+              </div>
+              <div class="flex-1 h-1 bg-green-200 mx-4"></div>
+              <div class="text-center">
+                <div class="w-12 h-12 bg-green-400 rounded-full flex items-center justify-center mx-auto mb-2">
+                  <i class="fas fa-chart-line text-green-900"></i>
+                </div>
+                <p class="font-medium">Management</p>
+                <p class="text-gray-600">3-5 years</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- HR Cluster -->
+        <div id="hr-cluster" class="mb-12">
+          <h3 class="font-display text-2xl font-semibold mb-6 text-purple-700">Cluster C: Human Resources & Public Administration (Backup)</h3>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-white border border-gray-200 rounded-xl p-6">
+              <h4 class="font-semibold text-lg mb-4 text-gray-800 flex items-center">
+                <i class="fas fa-users text-purple-600 mr-3"></i>
+                Human Resources
+              </h4>
+              <div class="space-y-4">
+                <div>
+                  <h5 class="font-medium text-gray-800 mb-2">Job Demand</h5>
+                  <p class="text-gray-700 text-sm">Consistent demand in both private and public sectors for managing organizational talent.</p>
+                </div>
+                <div>
+                  <h5 class="font-medium text-gray-800 mb-2">Your Strengths Match</h5>
+                  <p class="text-gray-700 text-sm">Strong language skills and people orientation align well with HR requirements.</p>
+                </div>
+                <div>
+                  <h5 class="font-medium text-gray-800 mb-2">Qualification Path</h5>
+                  <p class="text-gray-700 text-sm">Diploma in Human Resource Management at various universities and TVET colleges.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white border border-gray-200 rounded-xl p-6">
+              <h4 class="font-semibold text-lg mb-4 text-gray-800 flex items-center">
+                <i class="fas fa-building text-indigo-600 mr-3"></i>
+                Public Administration
+              </h4>
+              <div class="space-y-4">
+                <div>
+                  <h5 class="font-medium text-gray-800 mb-2">Career Scope</h5>
+                  <p class="text-gray-700 text-sm">Broad field encompassing government and non-profit organization roles.</p>
+                </div>
+                <div>
+                  <h5 class="font-medium text-gray-800 mb-2">Social Impact</h5>
+                  <p class="text-gray-700 text-sm">Opportunity to contribute to societal development and public service.</p>
+                </div>
+                <div>
+                  <h5 class="font-medium text-gray-800 mb-2">Entry Requirements</h5>
+                  <p class="text-gray-700 text-sm">Diploma or Degree in Public Administration, often accepting Mathematical Literacy.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Part 4: Financial Plan -->
+      <section id="financial-plan" class="mb-16">
+        <h2 class="font-display text-4xl font-semibold mb-8 text-gray-800">Part 4: The Financial and Logistical Plan</h2>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+          <div class="bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 rounded-xl p-6">
+            <h3 class="font-semibold text-xl mb-6 text-blue-800 flex items-center">
+              <i class="fas fa-money-check-alt text-blue-600 mr-3"></i>
+              NSFAS Funding Deep Dive
+            </h3>
+
+            <div class="space-y-4">
+              <div class="p-4 bg-white rounded-lg border border-blue-200">
+                <h4 class="font-medium text-blue-800 mb-2">Eligibility Criteria for 2026</h4>
+                <ul class="text-sm text-gray-700 space-y-1">
+                  <li>• South African citizen or permanent resident</li>
+                  <li>• Household income ≤ R350,000/year (R600,000 if disabled)</li>
+                  <li>• First-time entering student at public institution</li>
+                  <li>• Passed Grade 12 & meet admission requirements</li>
+                  <li>• Enrolled in NSFAS-approved course</li>
+                </ul>
+                <p class="text-xs text-gray-500 mt-2">
+                  Source: <a href="https://whatson.gauteng.net/nsfas-2026-application-requirements-eligibility/" class="citation-link">[12]</a>
+                </p>
+              </div>
+
+              <div class="alert-success p-4 rounded-lg">
+                <div class="flex items-start space-x-3">
+                  <i class="fas fa-check-circle text-green-600 mt-1"></i>
+                  <div>
+                    <h4 class="font-medium text-green-800">Good News</h4>
+                    <p class="text-green-700 text-sm">
+                      Having Mathematical Literacy does NOT disqualify you from NSFAS funding. Eligibility is based on financial need and academic requirements, not specific matric subjects.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-br from-green-50 to-emerald-50 border border-green-200 rounded-xl p-6">
+            <h3 class="font-semibold text-xl mb-6 text-green-800 flex items-center">
+              <i class="fas fa-gift text-green-600 mr-3"></i>
+              Other Funding Avenues
+            </h3>
+
+            <div class="space-y-4">
+              <div class="p-4 bg-white rounded-lg border border-green-200">
+                <h4 class="font-medium text-green-800 mb-2">Funza Lushaka Bursary</h4>
+                <p class="text-sm text-gray-700 mb-2">
+                  For teaching careers - covers tuition, accommodation, and living allowance. Requires teaching at public schools after graduation.
+                </p>
+                <p class="text-xs text-gray-500">
+                  Perfect match for Foundation Phase teaching career path.
+                </p>
+              </div>
+
+              <div class="p-4 bg-white rounded-lg border border-green-200">
+                <h4 class="font-medium text-green-800 mb-2">University-Specific Bursaries</h4>
+                <p class="text-sm text-gray-700">
+                  Most universities offer their own bursaries and grants based on academic and financial criteria. Check with each institution's financial aid office.
+                </p>
+              </div>
+
+              <div class="p-4 bg-white rounded-lg border border-green-200">
+                <h4 class="font-medium text-green-800 mb-2">Learnerships & Apprenticeships</h4>
+                <p class="text-sm text-gray-700">
+                  Work-based learning programs combining theory with practical experience, often fully funded by employers.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-xl p-6">
+          <h3 class="font-semibold text-xl mb-6 text-gray-800">Choosing Your Institution: A Comparison</h3>
+
+          <div class="overflow-x-auto">
+            <table class="w-full border-collapse border border-gray-300">
+              <thead>
+                <tr class="bg-gray-100">
+                  <th class="border border-gray-300 p-3 text-left font-semibold">Institution Type</th>
+                  <th class="border border-gray-300 p-3 text-left font-semibold">Focus</th>
+                  <th class="border border-gray-300 p-3 text-left font-semibold">Qualifications</th>
+                  <th class="border border-gray-300 p-3 text-left font-semibold">Learning Style</th>
+                  <th class="border border-gray-300 p-3 text-left font-semibold">Best For</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="bg-blue-50">
+                  <td class="border border-gray-300 p-3 font-medium text-blue-800">University</td>
+                  <td class="border border-gray-300 p-3 text-sm">Academic and theoretical</td>
+                  <td class="border border-gray-300 p-3 text-sm">Degrees, Higher Certificates</td>
+                  <td class="border border-gray-300 p-3 text-sm">Research-based, lectures</td>
+                  <td class="border border-gray-300 p-3 text-sm">Professional careers requiring degrees</td>
+                </tr>
+                <tr class="bg-green-50">
+                  <td class="border border-gray-300 p-3 font-medium text-green-800">TVET College</td>
+                  <td class="border border-gray-300 p-3 text-sm">Vocational and practical</td>
+                  <td class="border border-gray-300 p-3 text-sm">National Certificates, Diplomas</td>
+                  <td class="border border-gray-300 p-3 text-sm">Hands-on, workshop-based</td>
+                  <td class="border border-gray-300 p-3 text-sm">Specific trades and occupations</td>
+                </tr>
+                <tr class="bg-purple-50">
+                  <td class="border border-gray-300 p-3 font-medium text-purple-800">University of Technology</td>
+                  <td class="border border-gray-300 p-3 text-sm">Career-focused and applied</td>
+                  <td class="border border-gray-300 p-3 text-sm">Diplomas and Degrees</td>
+                  <td class="border border-gray-300 p-3 text-sm">Theory + practical learning</td>
+                  <td class="border border-gray-300 p-3 text-sm">Career-focused qualifications</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Part 5: Action Plan -->
+      <section id="action-plan" class="mb-16">
+        <h2 class="font-display text-4xl font-semibold mb-8 text-gray-800">Part 5: Your Step-by-Step Action Plan</h2>
+
+        <div class="mermaid-container">
+          <div class="mermaid-controls">
+            <button class="mermaid-control-btn zoom-in" title="放大">
+              <i class="fas fa-search-plus"></i>
+            </button>
+            <button class="mermaid-control-btn zoom-out" title="缩小">
+              <i class="fas fa-search-minus"></i>
+            </button>
+            <button class="mermaid-control-btn reset-zoom" title="重置">
+              <i class="fas fa-expand-arrows-alt"></i>
+            </button>
+            <button class="mermaid-control-btn fullscreen" title="全屏查看">
+              <i class="fas fa-expand"></i>
+            </button>
+          </div>
+          <div class="mermaid" id="action-plan-diagram">
+            timeline
+            title "Your 5-Month Roadmap to Success"
+
+            section "Phase 1"
+            "September 2025" : "Implement social study plan"
+            : "Form virtual study groups"
+            : "Take career assessments"
+            : "Research career clusters"
+
+            section "Phase 2"
+            "September-October" : "Submit provisional applications"
+            : "Apply for NSFAS"
+            : "Research other bursaries"
+            : "Finalize study strategy"
+
+            section "Phase 3"
+            "October-November" : "Focus entirely on final exams"
+            : "Intensive study period"
+            : "Practice past papers"
+            : "Maintain accountability"
+
+            section "Phase 4"
+            "January 2026" : "Receive final matric results"
+            : "Confirm provisional offers"
+            : "Apply for late windows if needed"
+            : "Make final decision"
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+          <div class="bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 rounded-xl p-6">
+            <h3 class="font-semibold text-xl mb-6 text-blue-800 flex items-center">
+              <i class="fas fa-rocket text-blue-600 mr-3"></i>
+              Phase 1: Focus & Self-Discovery (September 2025)
+            </h3>
+
+            <div class="space-y-4">
+              <div class="flex items-start space-x-3">
+                <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <i class="fas fa-book text-white text-sm"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium text-blue-800">Implement Study Plan</h4>
+                  <p class="text-blue-700 text-sm">Form virtual study groups, find accountability partner, establish consistent study routine.</p>
+                </div>
+              </div>
+
+              <div class="flex items-start space-x-3">
+                <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <i class="fas fa-search text-white text-sm"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium text-blue-800">Career Assessment</h4>
+                  <p class="text-blue-700 text-sm">Complete all three recommended career assessment tools and analyze results.</p>
+                </div>
+              </div>
+
+              <div class="flex items-start space-x-3">
+                <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <i class="fas fa-binoculars text-white text-sm"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium text-blue-800">Research Career Clusters</h4>
+                  <p class="text-blue-700 text-sm">Investigate 3-5 career clusters of interest, looking at job descriptions and requirements.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-br from-green-50 to-emerald-50 border border-green-200 rounded-xl p-6">
+            <h3 class="font-semibold text-xl mb-6 text-green-800 flex items-center">
+              <i class="fas fa-file-alt text-green-600 mr-3"></i>
+              Phase 2: Applications & Funding (Sep-Oct)
+            </h3>
+
+            <div class="space-y-4">
+              <div class="flex items-start space-x-3">
+                <div class="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <i class="fas fa-university text-white text-sm"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium text-green-800">Provisional Applications</h4>
+                  <p class="text-green-700 text-sm">Submit applications to chosen institutions based on career research and June results.</p>
+                </div>
+              </div>
+
+              <div class="flex items-start space-x-3">
+                <div class="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <i class="fas fa-money-bill-wave text-white text-sm"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium text-green-800">NSFAS Application</h4>
+                  <p class="text-green-700 text-sm">Apply as soon as window opens (September/October). Don't wait until deadline.</p>
+                </div>
+              </div>
+
+              <div class="flex items-start space-x-3">
+                <div class="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <i class="fas fa-search text-white text-sm"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium text-green-800">Additional Funding</h4>
+                  <p class="text-green-700 text-sm">Research and apply for other bursaries, especially career-specific ones like Funza Lushaka.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-gradient-to-br from-red-50 to-pink-50 border border-red-200 rounded-xl p-6">
+            <h3 class="font-semibold text-xl mb-6 text-red-800 flex items-center">
+              <i class="fas fa-exclamation-circle text-red-600 mr-3"></i>
+              Phase 3: Critical Exam Preparation (Oct-Nov)
+            </h3>
+
+            <div class="alert-urgent p-4 rounded-lg mb-4">
+              <p class="text-red-700 font-medium">
+                This is the most critical phase - your entire focus must be on final exam preparation.
+              </p>
+            </div>
+
+            <div class="space-y-3">
+              <div class="flex items-center space-x-3">
+                <i class="fas fa-clock text-red-600"></i>
+                <p class="text-red-700 text-sm">Intensive study schedule</p>
+              </div>
+              <div class="flex items-center space-x-3">
+                <i class="fas fa-file-alt text-red-600"></i>
+                <p class="text-red-700 text-sm">Past exam papers practice</p>
+              </div>
+              <div class="flex items-center space-x-3">
+                <i class="fas fa-users text-red-600"></i>
+                <p class="text-red-700 text-sm">Maintain study group accountability</p>
+              </div>
+              <div class="flex items-center space-x-3">
+                <i class="fas fa-brain text-red-600"></i>
+                <p class="text-red-700 text-sm">Focus on weaker subjects while maintaining strengths</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-br from-purple-50 to-indigo-50 border border-purple-200 rounded-xl p-6">
+            <h3 class="font-semibold text-xl mb-6 text-purple-800 flex items-center">
+              <i class="fas fa-flag-checkered text-purple-600 mr-3"></i>
+              Phase 4: Results & Final Decisions (January 2026)
+            </h3>
+
+            <div class="space-y-4">
+              <div class="flex items-start space-x-3">
+                <div class="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <i class="fas fa-envelope text-white text-sm"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium text-purple-800">Receive Final Results</h4>
+                  <p class="text-purple-700 text-sm">Get your final matric results in early January - this determines all your options.</p>
+                </div>
+              </div>
+
+              <div class="flex items-start space-x-3">
+                <div class="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <i class="fas fa-check text-white text-sm"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium text-purple-800">Confirm Offers</h4>
+                  <p class="text-purple-700 text-sm">Accept or decline provisional offers based on your final results.</p>
+                </div>
+              </div>
+
+              <div class="flex items-start space-x-3">
+                <div class="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <i class="fas fa-plus text-white text-sm"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium text-purple-800">Late Applications</h4>
+                  <p class="text-purple-700 text-sm">Apply during late application windows if needed - act quickly as these are short.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tools -->
+      <section id="tools" class="mb-16">
+        <h2 class="font-display text-4xl font-semibold mb-8 text-gray-800">Tools</h2>
+
+        <!-- APS Calculator -->
+        <div id="aps-calculator" class="mb-12">
+          <h3 class="font-display text-2xl font-semibold mb-4 text-gray-700">APS Calculator & Pass Advisor</h3>
+          <div class="bg-white border border-gray-200 rounded-xl p-6">
+            <form id="aps-form" class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Home Language (%)</label>
+                <input type="number" min="0" max="100" class="w-full border rounded px-3 py-2" name="homeLanguage" />
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">FAL (%)</label>
+                <input type="number" min="0" max="100" class="w-full border rounded px-3 py-2" name="fal" />
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Subject 3 (%)</label>
+                <input type="number" min="0" max="100" class="w-full border rounded px-3 py-2" name="s3" />
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Subject 4 (%)</label>
+                <input type="number" min="0" max="100" class="w-full border rounded px-3 py-2" name="s4" />
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Subject 5 (%)</label>
+                <input type="number" min="0" max="100" class="w-full border rounded px-3 py-2" name="s5" />
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Subject 6 (%)</label>
+                <input type="number" min="0" max="100" class="w-full border rounded px-3 py-2" name="s6" />
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Subject 7 (%)</label>
+                <input type="number" min="0" max="100" class="w-full border rounded px-3 py-2" name="s7" />
+              </div>
+            </form>
+            <div class="mt-4 flex gap-2">
+              <button id="aps-calc" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 text-sm">Calculate</button>
+              <button id="aps-copy" class="px-4 py-2 bg-gray-100 text-gray-800 rounded hover:bg-gray-200 text-sm">Copy Summary</button>
+              <button id="aps-clear" class="px-4 py-2 bg-gray-100 text-gray-800 rounded hover:bg-gray-200 text-sm">Clear</button>
+            </div>
+            <div id="aps-result" class="mt-4 text-sm text-gray-700"></div>
+          </div>
+        </div>
+
+        <!-- Study Planner -->
+        <div id="study-planner" class="mb-12">
+          <h3 class="font-display text-2xl font-semibold mb-4 text-gray-700">Weekly Study Planner</h3>
+          <div class="bg-white border border-gray-200 rounded-xl p-6">
+            <div class="flex flex-wrap items-center gap-2 mb-4">
+              <select id="planner-template" class="border rounded px-3 py-2 text-sm">
+                <option value="balanced">Balanced</option>
+                <option value="exam">Exam Focus</option>
+                <option value="light">Light Recovery</option>
+              </select>
+              <button id="planner-apply-template" class="px-3 py-2 bg-blue-600 text-white rounded text-sm">Apply Template</button>
+              <button id="planner-clear" class="px-3 py-2 bg-gray-100 text-gray-800 rounded text-sm">Clear Week</button>
+              <button id="planner-print" class="px-3 py-2 bg-emerald-600 text-white rounded text-sm">Print</button>
+            </div>
+            <div id="planner-grid" class="overflow-x-auto">
+              <!-- grid rendered by planner.js -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Funding Wizard -->
+        <div id="funding-wizard" class="mb-12">
+          <h3 class="font-display text-2xl font-semibold mb-4 text-gray-700">Funding Wizard (NSFAS & Bursaries)</h3>
+          <div class="bg-white border border-gray-200 rounded-xl p-6">
+            <div id="wizard-questions" class="space-y-3">
+              <!-- questions rendered by wizard.js -->
+            </div>
+            <div class="mt-4 flex gap-2">
+              <button id="wizard-start" class="px-3 py-2 bg-blue-600 text-white rounded text-sm">Start</button>
+              <button id="wizard-reset" class="px-3 py-2 bg-gray-100 text-gray-800 rounded text-sm">Reset</button>
+            </div>
+            <div id="wizard-result" class="mt-4 text-sm text-gray-700"></div>
+          </div>
+        </div>
+
+        <!-- Action Checklist -->
+        <div id="action-checklist" class="mb-12">
+          <h3 class="font-display text-2xl font-semibold mb-4 text-gray-700">Action Checklist</h3>
+          <div class="bg-white border border-gray-200 rounded-xl p-6">
+            <div class="flex gap-2 mb-4">
+              <input id="checklist-input" class="flex-1 border rounded px-3 py-2 text-sm" placeholder="Add a task..." />
+              <button id="checklist-add" class="px-3 py-2 bg-blue-600 text-white rounded text-sm">Add</button>
+              <button id="checklist-clear" class="px-3 py-2 bg-gray-100 text-gray-800 rounded text-sm">Clear Completed</button>
+            </div>
+            <ul id="checklist-list" class="space-y-2">
+              <!-- items rendered by app.js -->
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Resources -->
+      <section id="resources" class="mb-16">
+        <h2 class="font-display text-4xl font-semibold mb-8 text-gray-800">Resource Library (South Africa)</h2>
+        <div id="resource-list" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- populated from assets/data/resources.json -->
+        </div>
+        <p class="mt-4 text-xs text-gray-500">Data is local-only; nothing leaves your browser.</p>
+      </section>
+
+      <!-- Final Motivation -->
+      <section class="mb-16">
+        <div class="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white">
+          <div class="text-center">
+            <h2 class="font-display text-3xl font-semibold mb-4">Your Future Starts Now</h2>
+            <p class="text-xl mb-6 opacity-90">
+              The next few months will determine your entire academic and professional trajectory for 2026 and beyond.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+              <div class="text-center">
+                <div class="text-4xl font-bold mb-2">53%</div>
+                <div class="text-sm opacity-80">Your current average</div>
+              </div>
+              <div class="text-center">
+                <div class="text-4xl font-bold mb-2">19</div>
+                <div class="text-sm opacity-80">Diploma Pass APS target</div>
+              </div>
+              <div class="text-center">
+                <div class="text-4xl font-bold mb-2">100%</div>
+                <div class="text-sm opacity-80">Your potential with focus</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- References -->
+      <section class="mb-8">
+        <h3 class="font-semibold text-xl mb-6 text-gray-800">References</h3>
+        <div class="bg-gray-50 border border-gray-200 rounded-xl p-6 text-sm">
+          <ol class="space-y-2 text-gray-700">
+            <li>[1] SACAP. "What are the different types of matric passes?" <a href="https://www.sacap.edu.za/blog/applied-psychology/what-are-the-different-types-of-matric-passes/" class="citation-link">https://www.sacap.edu.za/blog/applied-psychology/what-are-the-different-types-of-matric-passes/</a>
+            </li>
+            <li>[2] Online Career Guidance. "Grade 12 Pass Requirements 2025." <a href="https://www.onlinecareerguidance.co.za/2025/01/14/grade-12-pass-requirements/" class="citation-link">https://www.onlinecareerguidance.co.za/2025/01/14/grade-12-pass-requirements/</a>
+            </li>
+            <li>[3] Western Cape Government. "National Senior Certificate Exams." <a href="https://www.westerncape.gov.za/education/national-senior-certificate-nsc-exams-june" class="citation-link">https://www.westerncape.gov.za/education/national-senior-certificate-nsc-exams-june</a>
+            </li>
+            <li>[4] Truity. "Holland Code Career Test." <a href="#" class="citation-link">https://www.truity.com/test/holland-code-career-test</a>
+            </li>
+            <li>[5] FundiConnect. "Career Tests for South African Students." <a href="https://fundiconnect.co.za/career-tests-for-south-african-students/" class="citation-link">https://fundiconnect.co.za/career-tests-for-south-african-students/</a>
+            </li>
+            <li>[6] FutureSA. "Teaching in South Africa: A Calling or a Necessity." <a href="https://www.futuresa.co.za/education/teaching-in-south-africa-a-calling-or-a-necessity/" class="citation-link">https://www.futuresa.co.za/education/teaching-in-south-africa-a-calling-or-a-necessity/</a>
+            </li>
+            <li>[7] Sable Network. "Teacher Supply and Demand 2025." <a href="https://www.sablenetwork.com/pdf/TeacherSupplyandDemand2025.pdf" class="citation-link">https://www.sablenetwork.com/pdf/TeacherSupplyandDemand2025.pdf</a>
+            </li>
+            <li>[8] Funza Lushaka. "Bursary Application Notes 2025." <a href="https://www.funzalushaka.doe.gov.za/Content/Documents/Funza%20Lushaka%20Bursary%20Application%20Notes%202025.pdf" class="citation-link">https://www.funzalushaka.doe.gov.za/Content/Documents/Funza%20Lushaka%20Bursary%20Application%20Notes%202025.pdf</a>
+            </li>
+            <li>[9] University of Johannesburg. "BEd in Foundation Phase Teaching." <a href="https://www.uj.ac.za/university-courses/bed-in-foundation-phase-teaching-grade-r-3/" class="citation-link">https://www.uj.ac.za/university-courses/bed-in-foundation-phase-teaching-grade-r-3/</a>
+            </li>
+            <li>[10] Central University of Technology. "Foundation Phase Teaching." <a href="https://www.cut.ac.za/programmes/foundation-phase-teaching" class="citation-link">https://www.cut.ac.za/programmes/foundation-phase-teaching</a>
+            </li>
+            <li>[11] UJ Undergraduate Prospectus 2026. <a href="https://mydigitalpublication.co.za/uj/undergraduate-prospectus-2026/62/" class="citation-link">https://mydigitalpublication.co.za/uj/undergraduate-prospectus-2026/62/</a>
+            </li>
+            <li>[12] What's On Gauteng. "NSFAS 2026 Application Requirements." <a href="https://whatson.gauteng.net/nsfas-2026-application-requirements-eligibility/" class="citation-link">https://whatson.gauteng.net/nsfas-2026-application-requirements-eligibility/</a>
+            </li>
+          </ol>
+        </div>
+      </section>
+    </main>
+
+    <!-- Initialize Mermaid with enhanced styling -->
+    <script>
+        mermaid.initialize({ 
+            startOnLoad: true, 
+            theme: 'base',
+            themeVariables: {
+                primaryColor: '#dbeafe',
+                primaryTextColor: '#1e40af',
+                primaryBorderColor: '#1e40af',
+                lineColor: '#1e40af',
+                sectionBkgColor: '#ffffff',
+                altSectionBkgColor: '#f8fafc',
+                gridColor: '#e5e7eb',
+                secondaryColor: '#fef3c7',
+                tertiaryColor: '#fee2e2',
+                background: '#ffffff',
+                mainBkg: '#ffffff',
+                secondBkg: '#f8fafc',
+                tertiaryBkg: '#f1f5f9',
+                // Enhanced contrast colors
+                cScale0: '#dbeafe',
+                cScale1: '#fef3c7', 
+                cScale2: '#fee2e2',
+                cScale3: '#dcfce7',
+                cScale4: '#e0e7ff',
+                cScale5: '#f1f5f9',
+                // Text colors for better contrast
+                taskBkgColor: '#ffffff',
+                taskTextColor: '#1f2937',
+                taskTextLightColor: '#6b7280',
+                activeTaskBkgColor: '#dbeafe',
+                activeTaskBorderColor: '#1e40af',
+                // Timeline specific
+                cScale0: '#dbeafe',
+                cScale1: '#dcfce7',
+                cScale2: '#fef3c7',
+                cScale3: '#fee2e2',
+                cScale4: '#e0e7ff',
+                cScale5: '#f1f5f9'
+            },
+            timeline: {
+                padding: 30,
+                useMaxWidth: true,
+                rightAngles: false
+            },
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true
+            },
+            sequence: {
+                useMaxWidth: true
+            },
+            gantt: {
+                useMaxWidth: true
+            }
+        });
+
+        // Initialize Mermaid Controls for zoom and pan
+        function initializeMermaidControls() {
+            const containers = document.querySelectorAll('.mermaid-container');
+
+            containers.forEach(container => {
+                const mermaidElement = container.querySelector('.mermaid');
+                let scale = 1;
+                let isDragging = false;
+                let startX, startY, translateX = 0, translateY = 0;
+
+                // 触摸相关状态
+                let isTouch = false;
+                let touchStartTime = 0;
+                let initialDistance = 0;
+                let initialScale = 1;
+                let isPinching = false;
+
+                // Zoom controls
+                const zoomInBtn = container.querySelector('.zoom-in');
+                const zoomOutBtn = container.querySelector('.zoom-out');
+                const resetBtn = container.querySelector('.reset-zoom');
+                const fullscreenBtn = container.querySelector('.fullscreen');
+
+                function updateTransform() {
+                    mermaidElement.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+
+                    if (scale > 1) {
+                        container.classList.add('zoomed');
+                    } else {
+                        container.classList.remove('zoomed');
+                    }
+
+                    mermaidElement.style.cursor = isDragging ? 'grabbing' : 'grab';
+                }
+
+                if (zoomInBtn) {
+                    zoomInBtn.addEventListener('click', () => {
+                        scale = Math.min(scale * 1.25, 4);
+                        updateTransform();
+                    });
+                }
+
+                if (zoomOutBtn) {
+                    zoomOutBtn.addEventListener('click', () => {
+                        scale = Math.max(scale / 1.25, 0.3);
+                        if (scale <= 1) {
+                            translateX = 0;
+                            translateY = 0;
+                        }
+                        updateTransform();
+                    });
+                }
+
+                if (resetBtn) {
+                    resetBtn.addEventListener('click', () => {
+                        scale = 1;
+                        translateX = 0;
+                        translateY = 0;
+                        updateTransform();
+                    });
+                }
+
+                if (fullscreenBtn) {
+                    fullscreenBtn.addEventListener('click', () => {
+                        if (container.requestFullscreen) {
+                            container.requestFullscreen();
+                        } else if (container.webkitRequestFullscreen) {
+                            container.webkitRequestFullscreen();
+                        } else if (container.msRequestFullscreen) {
+                            container.msRequestFullscreen();
+                        }
+                    });
+                }
+
+                // Mouse Events
+                mermaidElement.addEventListener('mousedown', (e) => {
+                    if (isTouch) return; // 如果是触摸设备，忽略鼠标事件
+
+                    isDragging = true;
+                    startX = e.clientX - translateX;
+                    startY = e.clientY - translateY;
+                    mermaidElement.style.cursor = 'grabbing';
+                    updateTransform();
+                    e.preventDefault();
+                });
+
+                document.addEventListener('mousemove', (e) => {
+                    if (isDragging && !isTouch) {
+                        translateX = e.clientX - startX;
+                        translateY = e.clientY - startY;
+                        updateTransform();
+                    }
+                });
+
+                document.addEventListener('mouseup', () => {
+                    if (isDragging && !isTouch) {
+                        isDragging = false;
+                        mermaidElement.style.cursor = 'grab';
+                        updateTransform();
+                    }
+                });
+
+                document.addEventListener('mouseleave', () => {
+                    if (isDragging && !isTouch) {
+                        isDragging = false;
+                        mermaidElement.style.cursor = 'grab';
+                        updateTransform();
+                    }
+                });
+
+                // 获取两点之间的距离
+                function getTouchDistance(touch1, touch2) {
+                    return Math.hypot(
+                        touch2.clientX - touch1.clientX,
+                        touch2.clientY - touch1.clientY
+                    );
+                }
+
+                // Touch Events - 触摸事件处理
+                mermaidElement.addEventListener('touchstart', (e) => {
+                    isTouch = true;
+                    touchStartTime = Date.now();
+
+                    if (e.touches.length === 1) {
+                        // 单指拖动
+                        isPinching = false;
+                        isDragging = true;
+
+                        const touch = e.touches[0];
+                        startX = touch.clientX - translateX;
+                        startY = touch.clientY - translateY;
+
+                    } else if (e.touches.length === 2) {
+                        // 双指缩放
+                        isPinching = true;
+                        isDragging = false;
+
+                        const touch1 = e.touches[0];
+                        const touch2 = e.touches[1];
+                        initialDistance = getTouchDistance(touch1, touch2);
+                        initialScale = scale;
+                    }
+
+                    e.preventDefault();
+                }, { passive: false });
+
+                mermaidElement.addEventListener('touchmove', (e) => {
+                    if (e.touches.length === 1 && isDragging && !isPinching) {
+                        // 单指拖动
+                        const touch = e.touches[0];
+                        translateX = touch.clientX - startX;
+                        translateY = touch.clientY - startY;
+                        updateTransform();
+
+                    } else if (e.touches.length === 2 && isPinching) {
+                        // 双指缩放
+                        const touch1 = e.touches[0];
+                        const touch2 = e.touches[1];
+                        const currentDistance = getTouchDistance(touch1, touch2);
+
+                        if (initialDistance > 0) {
+                            const newScale = Math.min(Math.max(
+                                initialScale * (currentDistance / initialDistance),
+                                0.3
+                            ), 4);
+                            scale = newScale;
+                            updateTransform();
+                        }
+                    }
+
+                    e.preventDefault();
+                }, { passive: false });
+
+                mermaidElement.addEventListener('touchend', (e) => {
+                    // 重置状态
+                    if (e.touches.length === 0) {
+                        isDragging = false;
+                        isPinching = false;
+                        initialDistance = 0;
+
+                        // 延迟重置isTouch，避免鼠标事件立即触发
+                        setTimeout(() => {
+                            isTouch = false;
+                        }, 100);
+                    } else if (e.touches.length === 1 && isPinching) {
+                        // 从双指变为单指，切换为拖动模式
+                        isPinching = false;
+                        isDragging = true;
+
+                        const touch = e.touches[0];
+                        startX = touch.clientX - translateX;
+                        startY = touch.clientY - translateY;
+                    }
+
+                    updateTransform();
+                });
+
+                mermaidElement.addEventListener('touchcancel', (e) => {
+                    isDragging = false;
+                    isPinching = false;
+                    initialDistance = 0;
+
+                    setTimeout(() => {
+                        isTouch = false;
+                    }, 100);
+
+                    updateTransform();
+                });
+
+                // Enhanced wheel zoom with better center point handling
+                container.addEventListener('wheel', (e) => {
+                    e.preventDefault();
+                    const rect = container.getBoundingClientRect();
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+
+                    const delta = e.deltaY > 0 ? 0.9 : 1.1;
+                    const newScale = Math.min(Math.max(scale * delta, 0.3), 4);
+
+                    // Adjust translation to zoom towards center
+                    if (newScale !== scale) {
+                        const scaleDiff = newScale / scale;
+                        translateX = translateX * scaleDiff;
+                        translateY = translateY * scaleDiff;
+                        scale = newScale;
+
+                        if (scale <= 1) {
+                            translateX = 0;
+                            translateY = 0;
+                        }
+
+                        updateTransform();
+                    }
+                });
+
+                // Initialize display
+                updateTransform();
+            });
+        }
+
+        // Initialize the mermaid controls after the DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Initialize mermaid controls
+            initializeMermaidControls();
+        });
+    </script>
+    <!-- Minimal JS bootstrap; modules lazy-load per section -->
+    <script type="module" src="assets/js/app.js"></script>
+  </body>
+
+</html>
