@@ -1,0 +1,30 @@
+---
+const year = new Date().getFullYear();
+---
+<footer class="mt-16 border-t border-base-300 bg-white/70">
+  <div class="container-safe py-8 text-sm text-neutral/80">
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+      <div class="space-y-1">
+        <p class="font-display text-base text-neutral">Project Phoenix</p>
+        <p class="text-neutral/60">A focused, minimalist roadmap for academic recovery and career choice.</p>
+      </div>
+
+      <nav aria-label="Footer">
+        <ul class="flex flex-wrap gap-x-6 gap-y-2">
+          <li><a href="/" class="hover:text-neutral">Home</a></li>
+          <li><a href="/roadmap" class="hover:text-neutral">Roadmap</a></li>
+          <li><a href="/compass" class="hover:text-neutral">Career Compass</a></li>
+          <li><a href="/study-hub" class="hover:text-neutral">Study Hub</a></li>
+          <li><a href="/funding" class="hover:text-neutral">Funding</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="mt-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+      <p class="text-neutral/60">© {year} Project Phoenix</p>
+      <p class="text-neutral/60">
+        Crafted with Astro, React islands, and Tailwind. Typography: Playfair Display & Inter.
+      </p>
+    </div>
+  </div>
+</footer>

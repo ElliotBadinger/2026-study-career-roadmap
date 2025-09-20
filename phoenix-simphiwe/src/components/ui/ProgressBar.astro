@@ -1,0 +1,38 @@
+---
+interface Props {
+  value: number; // 0..100
+  label?: string;
+  srLabel?: string;
+  class?: string;
+}
+const {
+  value,
+  label,
+  srLabel,
+  class: className = "",
+} = Astro.props as Props;
+
+const pct = Math.max(0, Math.min(100, Number.isFinite(value) ? value : 0));
+---
+
+<div class={`w-full ${className}`}>
+  {label && (
+    <div class="flex items-center justify-between mb-1">
+      <span class="text-sm text-neutral/80">{label}</span>
+      <span class="text-sm font-medium text-primary">{pct}%</span>
+    </div>
+  )}
+  <div
+    class="h-2 rounded bg-base-300 overflow-hidden"
+    role="progressbar"
+    aria-valuemin="0"
+    aria-valuemax="100"
+    aria-valuenow={pct}
+    aria-label={srLabel ?? label}
+  >
+    <div
+      class="h-full bg-gradient-to-r from-primary to-secondary transition-[width] duration-500 ease-out"
+      style={`width: ${pct}%;`}
+    />
+  </div>
+</div>

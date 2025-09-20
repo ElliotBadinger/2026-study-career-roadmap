@@ -1,0 +1,79 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Card from "../components/ui/Card.astro";
+import Alert from "../components/ui/Alert.astro";
+import Footnote from "../components/ui/Footnote.astro";
+import DecisionMatrixTool from "../components/islands/DecisionMatrixTool.jsx";
+import FilterableCareerCards from "../components/islands/FilterableCareerCards.jsx";
+import { compass } from "../content/compass";
+import { compassRefs, toList } from "../content/references";
+---
+
+<BaseLayout title="Career Compass — Project Phoenix" description="From tests to decisions: tools, synthesis method, and an interactive matrix to compare careers.">
+  <section class="mb-8 text-center space-y-3">
+    <h1 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-gradient italic">Your Career Compass</h1>
+    <p class="text-neutral/80 max-w-2xl mx-auto">
+      Reduce uncertainty with a simple, data‑driven process: take two or more assessments, cross‑reference themes, then use the Decision Matrix to choose your best‑fit options.
+    </p>
+  </section>
+
+  <section class="mb-10">
+    <h2 class="font-display text-2xl font-semibold mb-4">Step 1 — The Tools</h2>
+
+    <div class="grid gap-6 md:grid-cols-3">
+      {compass.toolsPrimary.map((t) => (
+        <Card title={t.title} href={t.href} accent={t.accent ?? "neutral"}>
+          {t.description}
+          {t.refId && <Footnote id={t.refId} tooltip={compassRefs[t.refId]?.title} />}
+        </Card>
+      ))}
+    </div>
+
+    <div class="mt-6 grid gap-6 md:grid-cols-3">
+      {compass.toolsAdditional.map((t) => (
+        <Card title={t.title} href={t.href} accent={t.accent ?? "neutral"}>
+          {t.description}
+          {t.refId && <Footnote id={t.refId} tooltip={compassRefs[t.refId]?.title} />}
+        </Card>
+      ))}
+    </div>
+  </section>
+
+  <section class="mb-10">
+    <h2 class="font-display text-2xl font-semibold mb-3">Step 2 — The Method</h2>
+    <Alert variant="info" title="Cross‑reference for recurring themes">
+      <ol class="list-decimal ml-5 space-y-1 text-sm text-neutral/80">
+        {compass.method.map((step) => (
+          <li>{step.text}</li>
+        ))}
+      </ol>
+    </Alert>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="font-display text-2xl font-semibold mb-4">Step 3 — Build Your Decision Matrix</h2>
+    <p class="text-neutral/70 mb-3 text-sm">
+      Add careers, rate Interest, Skills Match, and Job Demand (1–5). The total updates automatically. Sort, export, or import your data anytime.
+    </p>
+    <DecisionMatrixTool client:load defaultRows={compass.matrixSeed} />
+  </section>
+
+  <section class="mb-12">
+    <h2 class="font-display text-2xl font-semibold mb-4">Explore Career Cards</h2>
+    <p class="text-neutral/70 mb-3 text-sm">
+      Browse example options across Education, Business & Logistics, and HR & Public Admin. Filter by tags or search, then move your top matches into the matrix above.
+    </p>
+    <FilterableCareerCards client:load />
+  </section>
+
+  <section id="references" class="mt-8">
+    <h3 class="font-display text-xl font-semibold mb-3">References</h3>
+    <ol class="list-decimal ml-5 space-y-1 text-sm text-neutral/80">
+      {toList(compassRefs).map((r) => (
+        <li id={`ref-${r.id}`}>
+          <a class="text-primary" href={r.url}>{r.title}</a>
+        </li>
+      ))}
+    </ol>
+  </section>
+</BaseLayout>
