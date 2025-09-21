@@ -1,79 +1,77 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Card from "../components/ui/Card.astro";
+import Stepper from "../components/Stepper.astro";
+import Section from "../components/Section.astro";
+import Surface from "../components/Surface.astro";
+import FeatureCard from "../components/FeatureCard.astro";
+import Button from "../components/ui/Button.astro";
 import Alert from "../components/ui/Alert.astro";
-import Footnote from "../components/ui/Footnote.astro";
 import DecisionMatrixTool from "../components/islands/DecisionMatrixTool.jsx";
 import FilterableCareerCards from "../components/islands/FilterableCareerCards.jsx";
 import { compass } from "../content/compass";
-import { compassRefs, toList } from "../content/references";
 ---
 
 <BaseLayout title="Career Compass — Project Phoenix" description="From tests to decisions: tools, synthesis method, and an interactive matrix to compare careers.">
-  <section class="mb-8 text-center space-y-3">
-    <h1 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-gradient italic">Your Career Compass</h1>
-    <p class="text-neutral/80 max-w-2xl mx-auto">
-      Reduce uncertainty with a simple, data‑driven process: take two or more assessments, cross‑reference themes, then use the Decision Matrix to choose your best‑fit options.
-    </p>
-  </section>
+  <Section>
+    <Stepper currentPage="Compass" />
+    <div class="text-center max-w-3xl mx-auto mt-8">
+      <h1 class="text-4xl sm:text-5xl font-display font-bold mb-4 text-balance text-text-light-primary dark:text-text-dark-primary">
+        Your Career Compass
+      </h1>
+      <p class="text-lg text-text-light-secondary dark:text-text-dark-secondary text-balance">
+        Reduce uncertainty with a simple, data-driven process. Use these tools to find themes, then use the Decision Matrix to choose your best-fit options.
+      </p>
+    </div>
+  </Section>
 
-  <section class="mb-10">
-    <h2 class="font-display text-2xl font-semibold mb-4">Step 1 — The Tools</h2>
-
-    <div class="grid gap-6 md:grid-cols-3">
-      {compass.toolsPrimary.map((t) => (
-        <Card title={t.title} href={t.href} accent={t.accent ?? "neutral"}>
-          {t.description}
-          {t.refId && <Footnote id={t.refId} tooltip={compassRefs[t.refId]?.title} />}
-        </Card>
+  <Section title="Step 1: The Tools">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {compass.toolsPrimary.map((tool) => (
+        <FeatureCard title={tool.title} href={tool.href} cta="Open Tool">
+          {tool.description}
+        </FeatureCard>
       ))}
     </div>
+  </Section>
 
-    <div class="mt-6 grid gap-6 md:grid-cols-3">
-      {compass.toolsAdditional.map((t) => (
-        <Card title={t.title} href={t.href} accent={t.accent ?? "neutral"}>
-          {t.description}
-          {t.refId && <Footnote id={t.refId} tooltip={compassRefs[t.refId]?.title} />}
-        </Card>
-      ))}
+  <Section title="Step 2: The Method">
+    <Surface variant="s1" class="p-6">
+      <Alert variant="info" title="Cross-reference for recurring themes">
+        <ol class="list-decimal ml-5 space-y-1 text-sm">
+          {compass.method.map((step) => (
+            <li>{step.text}</li>
+          ))}
+        </ol>
+      </Alert>
+      <div class="text-center mt-6">
+        <Button href="#matrix" variant="secondary">
+          Move your best 3-5 options into the matrix now
+        </Button>
+      </div>
+    </Surface>
+  </Section>
+
+  <Section title="Step 3: Build Your Decision Matrix" id="matrix">
+    <Surface variant="s1" class="p-6">
+      <p class="text-text-light-secondary dark:text-text-dark-secondary mb-4 text-sm max-w-prose">
+        Add careers, rate Interest, Skills Match, and Job Demand (1-5). The total updates automatically. Sort, export, or import your data anytime.
+      </p>
+      <DecisionMatrixTool client:load defaultRows={compass.matrixSeed} />
+    </Surface>
+  </Section>
+
+  <Section title="Explore Career Cards">
+    <Surface variant="s1" class="p-6">
+      <p class="text-text-light-secondary dark:text-text-dark-secondary mb-4 text-sm max-w-prose">
+        Browse example options. Filter by tags or search, then move your top matches into the matrix above.
+      </p>
+      <FilterableCareerCards client:load />
+    </Surface>
+  </Section>
+
+  <Section>
+    <div class="text-center">
+      <Button href="/study-hub" size="lg">Next Step: Prepare to Study</Button>
     </div>
-  </section>
-
-  <section class="mb-10">
-    <h2 class="font-display text-2xl font-semibold mb-3">Step 2 — The Method</h2>
-    <Alert variant="info" title="Cross‑reference for recurring themes">
-      <ol class="list-decimal ml-5 space-y-1 text-sm text-neutral/80">
-        {compass.method.map((step) => (
-          <li>{step.text}</li>
-        ))}
-      </ol>
-    </Alert>
-  </section>
-
-  <section class="mb-12">
-    <h2 class="font-display text-2xl font-semibold mb-4">Step 3 — Build Your Decision Matrix</h2>
-    <p class="text-neutral/70 mb-3 text-sm">
-      Add careers, rate Interest, Skills Match, and Job Demand (1–5). The total updates automatically. Sort, export, or import your data anytime.
-    </p>
-    <DecisionMatrixTool client:load defaultRows={compass.matrixSeed} />
-  </section>
-
-  <section class="mb-12">
-    <h2 class="font-display text-2xl font-semibold mb-4">Explore Career Cards</h2>
-    <p class="text-neutral/70 mb-3 text-sm">
-      Browse example options across Education, Business & Logistics, and HR & Public Admin. Filter by tags or search, then move your top matches into the matrix above.
-    </p>
-    <FilterableCareerCards client:load />
-  </section>
-
-  <section id="references" class="mt-8">
-    <h3 class="font-display text-xl font-semibold mb-3">References</h3>
-    <ol class="list-decimal ml-5 space-y-1 text-sm text-neutral/80">
-      {toList(compassRefs).map((r) => (
-        <li id={`ref-${r.id}`}>
-          <a class="text-primary" href={r.url}>{r.title}</a>
-        </li>
-      ))}
-    </ol>
-  </section>
+  </Section>
 </BaseLayout>

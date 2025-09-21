@@ -1,31 +1,30 @@
 ---
+import InlineTooltip from "../InlineTooltip.astro";
 interface Props {
-  id: number | string;          // Footnote number or key
-  href?: string;                // External or internal reference URL
-  tooltip?: string;             // Tooltip content on hover/focus
-  class?: string;               // Extra classes
-  bracket?: boolean;            // Wrap the id in [n]
+  id: number | string;
+  tooltip?: string;
 }
-const {
-  id,
-  href,
-  tooltip,
-  class: className = "",
-  bracket = true,
-} = Astro.props as Props;
-
-const label = bracket ? `[${id}]` : String(id);
-const target = href ?? `#ref-${id}`;
+const { id, tooltip } = Astro.props;
 ---
 
-<sup class={`align-super text-xs leading-none`}>
-  <a
-    href={target}
-    title={tooltip ?? `Reference ${id}`}
-    class={`inline-flex items-center px-1 rounded text-primary/90 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 ${className}`}
-    aria-label={`Reference ${id}${tooltip ? `: ${tooltip}` : ""}`}
-    aria-describedby={`ref-${id}`}
-  >
-    {label}
-  </a>
+<sup class="align-super text-xs leading-none">
+  {tooltip ? (
+    <InlineTooltip tip={tooltip}>
+      <a
+        href={`#ref-${id}`}
+        class="inline-flex items-center px-1 rounded text-primary/90 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-opacity-40"
+        aria-label={`Reference ${id}: ${tooltip}`}
+      >
+        [{id}]
+      </a>
+    </InlineTooltip>
+  ) : (
+    <a
+      href={`#ref-${id}`}
+      class="inline-flex items-center px-1 rounded text-primary/90 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-opacity-40"
+      aria-label={`Reference ${id}`}
+    >
+      [{id}]
+    </a>
+  )}
 </sup>

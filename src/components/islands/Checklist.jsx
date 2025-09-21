@@ -89,32 +89,32 @@ export default function Checklist({
   }
 
   return (
-    <section className="rounded-xl border border-base-300 bg-white p-5 sm:p-6">
+    <section className="rounded-xl border border-border-light bg-bg-light-primary dark:border-border-dark dark:bg-bg-dark-surface p-5 sm:p-6">
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4">
-        <h3 className="font-display text-lg sm:text-xl font-semibold text-neutral">{title}</h3>
+        <h3 className="font-display text-lg sm:text-xl font-semibold text-text-light-primary dark:text-text-dark-primary">{title}</h3>
         <div className="flex items-center gap-2 text-xs">
-          <span className="px-2 py-1 rounded bg-base-200 border border-base-300">
+          <span className="px-2 py-1 rounded bg-bg-light-secondary border border-border-light dark:bg-bg-dark-primary dark:border-border-dark">
             {stats.done}/{stats.total} done
           </span>
           <div role="group" aria-label="Filter">
             <button
               type="button"
               onClick={() => setFilter("all")}
-              className={`px-2 py-1 rounded-l border border-base-300 ${filter === "all" ? "bg-base-200" : "hover:bg-base-100"}`}
+              className={`px-2 py-1 rounded-l border border-border-light dark:border-border-dark ${filter === "all" ? "bg-bg-light-secondary dark:bg-bg-dark-primary" : "hover:bg-bg-light-secondary/50 dark:hover:bg-bg-dark-primary/50"}`}
             >
               All
             </button>
             <button
               type="button"
               onClick={() => setFilter("open")}
-              className={`px-2 py-1 border-t border-b border-base-300 ${filter === "open" ? "bg-base-200" : "hover:bg-base-100"}`}
+              className={`px-2 py-1 border-t border-b border-border-light dark:border-border-dark ${filter === "open" ? "bg-bg-light-secondary dark:bg-bg-dark-primary" : "hover:bg-bg-light-secondary/50 dark:hover:bg-bg-dark-primary/50"}`}
             >
               Open
             </button>
             <button
               type="button"
               onClick={() => setFilter("done")}
-              className={`px-2 py-1 rounded-r border border-base-300 ${filter === "done" ? "bg-base-200" : "hover:bg-base-100"}`}
+              className={`px-2 py-1 rounded-r border border-border-light dark:border-border-dark ${filter === "done" ? "bg-bg-light-secondary dark:bg-bg-dark-primary" : "hover:bg-bg-light-secondary/50 dark:hover:bg-bg-dark-primary/50"}`}
             >
               Done
             </button>
@@ -130,12 +130,12 @@ export default function Checklist({
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder="Add a task…"
-            className="flex-1 text-sm px-3 py-2 rounded border border-base-300 bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+            className="flex-1 text-sm px-3 py-2 rounded border border-border-light bg-bg-light-primary dark:border-border-dark dark:bg-bg-dark-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
             aria-label="Add a task"
           />
           <button
             type="submit"
-            className="text-sm px-3 py-2 rounded bg-primary text-white hover:bg-blue-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+            className="text-sm px-3 py-2 rounded bg-primary text-white hover:bg-blue-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
           >
             Add
           </button>
@@ -144,20 +144,20 @@ export default function Checklist({
 
       <ul className="space-y-2">
         {view.length === 0 ? (
-          <li className="text-sm text-neutral/60">Nothing here yet.</li>
+          <li className="text-sm text-text-light-secondary dark:text-text-dark-secondary">Nothing here yet.</li>
         ) : (
           view.map((i) => (
-            <li key={i.id} className="flex items-start gap-3 rounded border border-base-300 bg-base-100 p-3">
+            <li key={i.id} className="flex items-start gap-3 rounded border border-border-light bg-bg-light-secondary dark:border-border-dark dark:bg-bg-dark-primary p-3">
               <input
                 id={`${storageKey}-${i.id}`}
                 type="checkbox"
                 checked={!!i.checked}
                 onChange={() => toggle(i.id)}
-                className="mt-0.5 h-4 w-4 rounded border-base-300 text-primary focus:ring-primary/40"
+                className="mt-0.5 h-4 w-4 rounded border-border-light dark:border-border-dark text-primary focus:ring-primary/40"
               />
               <label
                 htmlFor={`${storageKey}-${i.id}`}
-                className={`flex-1 text-sm ${i.checked ? "line-through text-neutral/50" : "text-neutral/90"}`}
+                className={`flex-1 text-sm ${i.checked ? "line-through text-text-light-secondary/80 dark:text-text-dark-secondary/80" : "text-text-light-primary dark:text-text-dark-primary"}`}
               >
                 {i.label}
               </label>
@@ -165,7 +165,7 @@ export default function Checklist({
                 type="button"
                 onClick={() => remove(i.id)}
                 aria-label="Remove item"
-                className="text-xs px-2 py-1 rounded border border-base-300 hover:bg-base-200"
+                className="text-xs px-2 py-1 rounded border border-border-light hover:bg-bg-light-primary dark:border-border-dark dark:hover:bg-bg-dark-surface"
               >
                 Remove
               </button>
@@ -179,14 +179,14 @@ export default function Checklist({
           type="button"
           onClick={clearCompleted}
           disabled={stats.done === 0}
-          className="px-3 py-1.5 rounded border border-base-300 hover:bg-base-200 disabled:opacity-50"
+          className="px-3 py-1.5 rounded border border-border-light hover:bg-bg-light-secondary dark:border-border-dark dark:hover:bg-bg-dark-surface disabled:opacity-50"
         >
           Clear completed
         </button>
         <button
           type="button"
           onClick={resetToDefaults}
-          className="px-3 py-1.5 rounded border border-base-300 hover:bg-base-200"
+          className="px-3 py-1.5 rounded border border-border-light hover:bg-bg-light-secondary dark:border-border-dark dark:hover:bg-bg-dark-surface"
         >
           Reset to defaults
         </button>

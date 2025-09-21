@@ -1,82 +1,58 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Card from "../components/ui/Card.astro";
+import Stepper from "../components/Stepper.astro";
+import Section from "../components/Section.astro";
+import Surface from "../components/Surface.astro";
+import FeatureCard from "../components/FeatureCard.astro";
+import Button from "../components/ui/Button.astro";
 import Alert from "../components/ui/Alert.astro";
-import Footnote from "../components/ui/Footnote.astro";
 import { study } from "../content/study";
-import { studyRefs, toList } from "../content/references";
 ---
 
 <BaseLayout title="Study Hub — Project Phoenix" description="A social-learner playbook: group strategies, accountability, timed past papers, and curated SA resources.">
-  <section class="mb-8 text-center space-y-3">
-    <h1 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-gradient italic">Your Study Hub</h1>
-    <p class="text-neutral/80 max-w-2xl mx-auto">
-      You learn best with people. Use that advantage: study groups, accountability, and consistent practice with past papers.
-    </p>
-  </section>
+  <Section>
+    <Stepper currentPage="Study Hub" />
+    <div class="text-center max-w-3xl mx-auto mt-8">
+      <h1 class="text-4xl sm:text-5xl font-display font-bold mb-4 text-balance text-text-light-primary dark:text-text-dark-primary">
+        Your Study Hub
+      </h1>
+      <p class="text-lg text-text-light-secondary dark:text-text-dark-secondary text-balance">
+        You learn best with people. Use that advantage: study groups, accountability, and consistent practice with past papers.
+      </p>
+    </div>
+  </Section>
 
-  <section class="mb-10">
-    <Alert variant="info" title="The Social-Learner Advantage">
-      <ul class="list-disc ml-5 space-y-1 text-sm text-neutral/80">
-        <li>Form a focused group of 2–4 peers and meet 3–4 times per week.</li>
-        <li>Use teach-back: after a topic, one member explains the concept to the group.</li>
-        <li>Rotate past-paper marking together to spot patterns and examiner language.</li>
-        <li>Pair with an accountability partner for weekly check-ins and goal reviews.</li>
-      </ul>
-    </Alert>
-  </section>
-
-  <section class="mb-12 grid gap-6 md:grid-cols-2">
-    {study.strategies.map((s) => (
-      <Card title={s.title} accent={s.accent ?? "neutral"}>
-        <ul class="list-disc ml-5 space-y-1 text-sm text-neutral/80">
-          {s.bullets.map((b) => (
-            <li>{b}</li>
-          ))}
+  <Section title="The Social-Learner Advantage">
+    <Surface variant="s1" class="p-6">
+      <Alert variant="info" title="Key Strategies">
+        <ul class="list-disc ml-5 space-y-1 text-sm">
+          <li>Form a focused group of 2–4 peers and meet 3–4 times per week.</li>
+          <li>Use teach-back: after a topic, one member explains the concept to the group.</li>
+          <li>Rotate past-paper marking together to spot patterns and examiner language.</li>
+          <li>Pair with an accountability partner for weekly check-ins and goal reviews.</li>
         </ul>
-      </Card>
-    ))}
-  </section>
+      </Alert>
+    </Surface>
+  </Section>
 
-  <section class="mb-10">
-    <h2 class="font-display text-2xl font-semibold mb-4">Free Resources (South Africa First)</h2>
-    <div class="grid gap-6 md:grid-cols-2">
-      {study.officialResources.map((r) => (
-        <Card title={r.title} href={r.href} accent="blue">
-          <p class="text-sm text-neutral/80">
-            {r.description}
-            {r.refId && <Footnote id={r.refId} tooltip={studyRefs[r.refId]?.title} />}
-          </p>
-        </Card>
+  <Section title="Free Resources (South Africa First)">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {study.officialResources.map((resource) => (
+        <FeatureCard title={resource.title} href={resource.href} cta="Open Resource">
+          {resource.description}
+        </FeatureCard>
       ))}
-      {study.supplementaryResources.map((r) => (
-        <Card title={r.title} href={r.href} accent="amber">
-          <p class="text-sm text-neutral/80">
-            {r.description}
-            {r.refId && <Footnote id={r.refId} tooltip={studyRefs[r.refId]?.title} />}
-          </p>
-        </Card>
+      {study.supplementaryResources.map((resource) => (
+        <FeatureCard title={resource.title} href={resource.href} cta="Open Resource">
+          {resource.description}
+        </FeatureCard>
       ))}
     </div>
+  </Section>
 
-    <div class="mt-8">
-      <h3 class="font-display text-xl font-semibold mb-3">How to Use These Efficiently</h3>
-      <ul class="list-disc ml-5 space-y-1 text-sm text-neutral/80">
-        {study.efficiencyTips.map((t) => (
-          <li>{t}</li>
-        ))}
-      </ul>
+  <Section>
+    <div class="text-center">
+      <Button href="/funding" size="lg">Next Step: Sort Out Funding</Button>
     </div>
-  </section>
-
-  <section id="references" class="mt-8">
-    <h3 class="font-display text-xl font-semibold mb-3">References</h3>
-    <ol class="list-decimal ml-5 space-y-1 text-sm text-neutral/80">
-      {toList(studyRefs).map((r) => (
-        <li id={`ref-${r.id}`}>
-          <a class="text-primary" href={r.url}>{r.title}</a>
-        </li>
-      ))}
-    </ol>
-  </section>
+  </Section>
 </BaseLayout>

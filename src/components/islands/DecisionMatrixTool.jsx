@@ -212,14 +212,14 @@ export default function DecisionMatrixTool({
   }
 
   return (
-    <section className="rounded-xl border border-base-300 bg-white p-5 sm:p-6">
+    <section className="rounded-xl border border-border-light bg-bg-light-primary dark:border-border-dark dark:bg-bg-dark-surface p-5 sm:p-6">
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4">
-        <h2 className="font-display text-lg sm:text-xl font-semibold text-neutral">{title}</h2>
+        <h2 className="font-display text-lg sm:text-xl font-semibold text-text-light-primary dark:text-text-dark-primary">{title}</h2>
         <div className="flex flex-wrap gap-2 text-xs">
-          <div className="flex items-center gap-1 border border-base-300 rounded px-2 py-1">
-            <label className="text-neutral/70">Sort</label>
+          <div className="flex items-center gap-1 border border-border-light dark:border-border-dark rounded px-2 py-1">
+            <label className="text-text-light-secondary dark:text-text-dark-secondary">Sort</label>
             <select
-              className="bg-white outline-none"
+              className="bg-bg-light-primary dark:bg-bg-dark-surface outline-none"
               value={sortKey}
               onChange={(e) => setSortKey(e.target.value)}
               aria-label="Sort column"
@@ -229,7 +229,7 @@ export default function DecisionMatrixTool({
             </select>
             <button
               type="button"
-              className="px-2 py-0.5 rounded border border-base-300 hover:bg-base-200"
+              className="px-2 py-0.5 rounded border border-border-light hover:bg-bg-light-secondary dark:border-border-dark dark:hover:bg-bg-dark-primary"
               onClick={() => setSortDir((d) => (d === "asc" ? "desc" : "asc"))}
               aria-label="Toggle sort direction"
               title="Toggle sort direction"
@@ -238,10 +238,10 @@ export default function DecisionMatrixTool({
             </button>
           </div>
 
-          <div className="flex items-center gap-1 border border-base-300 rounded px-2 py-1">
-            <label className="text-neutral/70">Filter</label>
+          <div className="flex items-center gap-1 border border-border-light dark:border-border-dark rounded px-2 py-1">
+            <label className="text-text-light-secondary dark:text-text-dark-secondary">Filter</label>
             <select
-              className="bg-white outline-none"
+              className="bg-bg-light-primary dark:bg-bg-dark-surface outline-none"
               value={filter}
               onChange={(e) => setFilter(e.target.value)}
               aria-label="Filter rows"
@@ -253,26 +253,26 @@ export default function DecisionMatrixTool({
 
           <button
             type="button"
-            className="px-3 py-1.5 rounded border border-base-300 hover:bg-base-200"
+            className="px-3 py-1.5 rounded border border-border-light hover:bg-bg-light-secondary dark:border-border-dark dark:hover:bg-bg-dark-primary"
             onClick={addRow}
           >
             Add row
           </button>
           <button
             type="button"
-            className="px-3 py-1.5 rounded border border-base-300 hover:bg-base-200"
+            className="px-3 py-1.5 rounded border border-border-light hover:bg-bg-light-secondary dark:border-border-dark dark:hover:bg-bg-dark-primary"
             onClick={copyJSON}
           >
             Copy JSON
           </button>
           <button
             type="button"
-            className="px-3 py-1.5 rounded border border-base-300 hover:bg-base-200"
+            className="px-3 py-1.5 rounded border border-border-light hover:bg-bg-light-secondary dark:border-border-dark dark:hover:bg-bg-dark-primary"
             onClick={downloadJSON}
           >
             Export
           </button>
-          <label className="px-3 py-1.5 rounded border border-base-300 hover:bg-base-200 cursor-pointer">
+          <label className="px-3 py-1.5 rounded border border-border-light hover:bg-bg-light-secondary dark:border-border-dark dark:hover:bg-bg-dark-primary cursor-pointer">
             Import
             <input
               ref={fileRef}
@@ -285,7 +285,7 @@ export default function DecisionMatrixTool({
           </label>
           <button
             type="button"
-            className="px-3 py-1.5 rounded border border-base-300 hover:bg-base-200"
+            className="px-3 py-1.5 rounded border border-border-light hover:bg-bg-light-secondary dark:border-border-dark dark:hover:bg-bg-dark-primary"
             onClick={resetExamples}
           >
             Reset examples
@@ -294,39 +294,39 @@ export default function DecisionMatrixTool({
       </div>
 
       <div className="overflow-x-auto">
-        <table className="w-full border-collapse border border-base-300 text-sm">
+        <table className="w-full border-collapse border border-border-light dark:border-border-dark text-sm">
           <thead>
-            <tr className="bg-base-200">
-              <th scope="col" className="border border-base-300 p-2 text-left font-semibold">
+            <tr className="bg-bg-light-secondary dark:bg-bg-dark-primary">
+              <th scope="col" className="border border-border-light dark:border-border-dark p-2 text-left font-semibold">
                 Career Option
               </th>
-              <th scope="col" className="border border-base-300 p-2 text-center font-semibold">
+              <th scope="col" className="border border-border-light dark:border-border-dark p-2 text-center font-semibold">
                 Interest (1-5)
               </th>
-              <th scope="col" className="border border-base-300 p-2 text-center font-semibold">
+              <th scope="col" className="border border-border-light dark:border-border-dark p-2 text-center font-semibold">
                 Skills Match (1-5)
               </th>
-              <th scope="col" className="border border-base-300 p-2 text-center font-semibold">
+              <th scope="col" className="border border-border-light dark:border-border-dark p-2 text-center font-semibold">
                 Job Demand (1-5)
               </th>
-              <th scope="col" className="border border-base-300 p-2 text-left font-semibold">
+              <th scope="col" className="border border-border-light dark:border-border-dark p-2 text-left font-semibold">
                 Qualification
               </th>
-              <th scope="col" className="border border-base-300 p-2 text-center font-semibold">
+              <th scope="col" className="border border-border-light dark:border-border-dark p-2 text-center font-semibold">
                 Funding
               </th>
-              <th scope="col" className="border border-base-300 p-2 text-center font-semibold">
+              <th scope="col" className="border border-border-light dark:border-border-dark p-2 text-center font-semibold">
                 Total
               </th>
-              <th scope="col" className="border border-base-300 p-2 text-center font-semibold">
+              <th scope="col" className="border border-border-light dark:border-border-dark p-2 text-center font-semibold">
                 Remove
               </th>
             </tr>
           </thead>
           <tbody>
             {view.map((r) => (
-              <tr key={r.id} className="odd:bg-white even:bg-base-100">
-                <td className="border border-base-300 p-2">
+              <tr key={r.id} className="odd:bg-bg-light-primary even:bg-bg-light-secondary dark:odd:bg-bg-dark-surface dark:even:bg-bg-dark-primary">
+                <td className="border border-border-light dark:border-border-dark p-2">
                   <input
                     type="text"
                     value={r.name}
@@ -335,40 +335,40 @@ export default function DecisionMatrixTool({
                     aria-label="Career Option"
                   />
                 </td>
-                <td className="border border-base-300 p-2 text-center">
+                <td className="border border-border-light dark:border-border-dark p-2 text-center">
                   <input
                     type="number"
                     min={1}
                     max={5}
                     value={r.interest}
                     onChange={(e) => updateRow(r.id, { interest: clampScore(e.target.value) })}
-                    className="w-16 text-center bg-white border border-base-300 rounded"
+                    className="w-16 text-center bg-bg-light-primary dark:bg-bg-dark-surface border border-border-light dark:border-border-dark rounded"
                     aria-label="Interest score"
                   />
                 </td>
-                <td className="border border-base-300 p-2 text-center">
+                <td className="border border-border-light dark:border-border-dark p-2 text-center">
                   <input
                     type="number"
                     min={1}
                     max={5}
                     value={r.skills}
                     onChange={(e) => updateRow(r.id, { skills: clampScore(e.target.value) })}
-                    className="w-16 text-center bg-white border border-base-300 rounded"
+                    className="w-16 text-center bg-bg-light-primary dark:bg-bg-dark-surface border border-border-light dark:border-border-dark rounded"
                     aria-label="Skills Match score"
                   />
                 </td>
-                <td className="border border-base-300 p-2 text-center">
+                <td className="border border-border-light dark:border-border-dark p-2 text-center">
                   <input
                     type="number"
                     min={1}
                     max={5}
                     value={r.demand}
                     onChange={(e) => updateRow(r.id, { demand: clampScore(e.target.value) })}
-                    className="w-16 text-center bg-white border border-base-300 rounded"
+                    className="w-16 text-center bg-bg-light-primary dark:bg-bg-dark-surface border border-border-light dark:border-border-dark rounded"
                     aria-label="Job Demand score"
                   />
                 </td>
-                <td className="border border-base-300 p-2">
+                <td className="border border-border-light dark:border-border-dark p-2">
                   <input
                     type="text"
                     value={r.qualification ?? ""}
@@ -378,7 +378,7 @@ export default function DecisionMatrixTool({
                     placeholder="e.g., Diploma, B.Ed"
                   />
                 </td>
-                <td className="border border-base-300 p-2 text-center">
+                <td className="border border-border-light dark:border-border-dark p-2 text-center">
                   <input
                     type="text"
                     value={r.funding ?? ""}
@@ -388,15 +388,15 @@ export default function DecisionMatrixTool({
                     placeholder="NSFAS / Funza"
                   />
                 </td>
-                <td className="border border-base-300 p-2 text-center font-semibold text-primary">
+                <td className="border border-border-light dark:border-border-dark p-2 text-center font-semibold text-primary">
                   {r.total}
                 </td>
-                <td className="border border-base-300 p-2 text-center">
+                <td className="border border-border-light dark:border-border-dark p-2 text-center">
                   <button
                     type="button"
                     onClick={() => removeRow(r.id)}
                     aria-label={`Remove ${r.name}`}
-                    className="text-xs px-2 py-1 rounded border border-base-300 hover:bg-base-200"
+                    className="text-xs px-2 py-1 rounded border border-border-light hover:bg-bg-light-secondary dark:border-border-dark dark:hover:bg-bg-dark-primary"
                   >
                     Remove
                   </button>
@@ -405,7 +405,7 @@ export default function DecisionMatrixTool({
             ))}
             {view.length === 0 && (
               <tr>
-                <td className="border border-base-300 p-3 text-center text-neutral/60" colSpan={8}>
+                <td className="border border-border-light dark:border-border-dark p-3 text-center text-text-light-secondary dark:text-text-dark-secondary" colSpan={8}>
                   No rows. Click “Add row” to begin.
                 </td>
               </tr>
@@ -420,21 +420,21 @@ export default function DecisionMatrixTool({
           <textarea
             value={importText}
             onChange={(e) => setImportText(e.target.value)}
-            className="w-full h-28 text-xs border border-base-300 rounded p-2"
+            className="w-full h-28 text-xs border border-border-light dark:border-border-dark rounded p-2 bg-bg-light-secondary dark:bg-bg-dark-primary"
             placeholder='[{"id":"1","name":"Example","interest":4,"skills":4,"demand":5,"qualification":"","funding":""}]'
           />
           <div className="mt-2 flex gap-2">
             <button
               type="button"
               onClick={importFromText}
-              className="px-3 py-1.5 rounded border border-base-300 hover:bg-base-200 text-xs"
+              className="px-3 py-1.5 rounded border border-border-light hover:bg-bg-light-secondary dark:border-border-dark dark:hover:bg-bg-dark-primary text-xs"
             >
               Import from text
             </button>
             <button
               type="button"
               onClick={() => setImportText("")}
-              className="px-3 py-1.5 rounded border border-base-300 hover:bg-base-200 text-xs"
+              className="px-3 py-1.5 rounded border border-border-light hover:bg-bg-light-secondary dark:border-border-dark dark:hover:bg-bg-dark-primary text-xs"
             >
               Clear
             </button>

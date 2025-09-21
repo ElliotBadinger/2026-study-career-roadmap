@@ -1,0 +1,39 @@
+---
+interface Props {
+  currentPage: "Home" | "Roadmap" | "Compass" | "Study Hub" | "Funding";
+}
+const { currentPage } = Astro.props;
+
+const steps = ["Home", "Roadmap", "Compass", "Study Hub", "Funding"];
+const currentPageIndex = steps.indexOf(currentPage);
+---
+
+<nav aria-label="Progress">
+  <ol class="flex items-center justify-center space-x-2 sm:space-x-4">
+    {steps.map((step, index) => {
+      const isCompleted = index < currentPageIndex;
+      const isCurrent = index === currentPageIndex;
+      return (
+        <li class="flex items-center">
+          <div class:list={[
+            "flex-shrink-0 rounded-full w-6 h-6 sm:w-8 sm:h-8 flex items-center justify-center text-xs sm:text-sm font-medium",
+            isCompleted ? "bg-primary text-white" : "",
+            isCurrent ? "bg-blue-200 text-primary dark:bg-blue-500/20 dark:text-blue-300" : "",
+            !isCompleted && !isCurrent ? "bg-slate-200 text-slate-500 dark:bg-slate-700 dark:text-slate-400" : ""
+          ]}>
+            {isCompleted ? (
+              <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+            ) : (
+              <span>{index + 1}</span>
+            )}
+          </div>
+          {index < steps.length - 1 && (
+            <div class="flex-auto border-t-2 border-border-light dark:border-border-dark mx-2 sm:mx-4"></div>
+          )}
+        </li>
+      );
+    })}
+  </ol>
+</nav>

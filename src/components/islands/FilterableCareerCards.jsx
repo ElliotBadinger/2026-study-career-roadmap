@@ -128,9 +128,9 @@ export default function FilterableCareerCards({
   }, [allTags, data]);
 
   return (
-    <section className="rounded-xl border border-base-300 bg-white p-5 sm:p-6">
+    <section className="rounded-xl border border-border-light bg-bg-light-primary dark:border-border-dark dark:bg-bg-dark-surface p-5 sm:p-6">
       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3 mb-4">
-        <h2 className="font-display text-lg sm:text-xl font-semibold text-neutral">
+        <h2 className="font-display text-lg sm:text-xl font-semibold text-text-light-primary dark:text-text-dark-primary">
           Explore Career Cards
         </h2>
         <div className="flex items-center gap-2">
@@ -139,7 +139,7 @@ export default function FilterableCareerCards({
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search careers, skills, tags…"
-            className="text-sm px-3 py-2 rounded border border-base-300 bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 w-64"
+            className="text-sm px-3 py-2 rounded border border-border-light bg-bg-light-primary dark:border-border-dark dark:bg-bg-dark-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 w-64"
             aria-label="Search careers"
           />
         </div>
@@ -155,12 +155,12 @@ export default function FilterableCareerCards({
               onClick={() => setActiveTag(t)}
               className={`text-xs px-3 py-1.5 rounded border ${
                 active
-                  ? "border-primary text-primary bg-blue-50"
-                  : "border-base-300 text-neutral/80 hover:bg-base-100"
+                  ? "border-primary text-primary bg-blue-500/10"
+                  : "border-border-light text-text-light-secondary hover:bg-bg-light-secondary dark:border-border-dark dark:text-text-dark-secondary dark:hover:bg-bg-dark-primary"
               }`}
               aria-pressed={active}
             >
-              {t} <span className="ml-1 text-neutral/50">{countsByTag[t] ?? 0}</span>
+              {t} <span className="ml-1 text-text-light-secondary/80 dark:text-text-dark-secondary/80">{countsByTag[t] ?? 0}</span>
             </button>
           );
         })}
@@ -168,25 +168,25 @@ export default function FilterableCareerCards({
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {filtered.length === 0 ? (
-          <p className="text-sm text-neutral/60">No careers match your filters.</p>
+          <p className="text-sm text-text-light-secondary dark:text-text-dark-secondary">No careers match your filters.</p>
         ) : (
           filtered.map((c) => (
             <article
               key={c.id}
-              className="rounded-xl border border-base-300 bg-white p-5 card-hover"
+              className="rounded-xl border border-border-light bg-bg-light-primary dark:border-border-dark dark:bg-bg-dark-surface p-5 interactive-card"
             >
               <header className="mb-2 flex items-start justify-between gap-3">
-                <h3 className="font-display text-neutral font-semibold">{c.title}</h3>
-                <span className="text-xs rounded bg-base-200 border border-base-300 px-2 py-0.5 text-neutral/70">
+                <h3 className="font-display text-text-light-primary dark:text-text-dark-primary font-semibold">{c.title}</h3>
+                <span className="text-xs rounded bg-bg-light-secondary border border-border-light dark:bg-bg-dark-primary dark:border-border-dark px-2 py-0.5 text-text-light-secondary dark:text-text-dark-secondary">
                   {c.cluster}
                 </span>
               </header>
-              <p className="text-sm text-neutral/80">{c.description}</p>
+              <p className="text-sm text-text-light-secondary dark:text-text-dark-secondary">{c.description}</p>
               <div className="mt-3 flex flex-wrap gap-2">
                 {c.tags.map((t) => (
                   <span
                     key={t}
-                    className="text-[10px] uppercase tracking-wide px-2 py-0.5 rounded bg-base-200 border border-base-300 text-neutral/70"
+                    className="text-[10px] uppercase tracking-wide px-2 py-0.5 rounded bg-bg-light-secondary border border-border-light dark:bg-bg-dark-primary dark:border-border-dark text-text-light-secondary dark:text-text-dark-secondary"
                   >
                     {t}
                   </span>

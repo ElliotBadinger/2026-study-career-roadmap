@@ -1,0 +1,29 @@
+---
+import Surface from "./Surface.astro";
+import Button from "./ui/Button.astro";
+
+interface Props {
+  title: string;
+  href: string;
+  cta: string;
+  class?: string;
+}
+const { title, href, cta, class: className } = Astro.props;
+---
+
+<Surface variant="s2" href={href} class:list={["p-6 flex flex-col group relative", className]}>
+  <div class="flex-1">
+    <h3 class="font-display text-lg font-semibold mb-2 text-text-light-primary dark:text-text-dark-primary">{title}</h3>
+    <div class="text-sm text-text-light-secondary dark:text-text-dark-secondary">
+      <slot />
+    </div>
+  </div>
+  <div class="mt-4 font-medium text-primary group-hover:underline">
+    {cta}
+  </div>
+  <div class="absolute top-4 right-4 text-text-light-secondary dark:text-text-dark-secondary opacity-0 group-hover:opacity-100 transition-opacity">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+    </svg>
+  </div>
+</Surface>

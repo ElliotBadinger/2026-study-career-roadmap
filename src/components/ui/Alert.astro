@@ -10,27 +10,24 @@ const {
   class: className = "",
 } = Astro.props as Props;
 
-const base = "rounded-xl p-6 border-l-4";
+const base = "rounded-xl p-4 sm:p-6 border";
 const map = {
   urgent: {
-    wrap: "bg-gradient-to-br from-red-50 to-rose-50 border-l-accent",
-    icon: "text-red-600",
-    title: "text-red-800",
-    text: "text-red-700",
+    wrap: "bg-red-500/10 border-red-500/20 text-red-800 dark:text-red-200",
+    icon: "text-accent",
+    title: "text-red-900 dark:text-red-100",
     sr: "Urgent",
   },
   info: {
-    wrap: "bg-gradient-to-br from-indigo-50 to-blue-50 border-l-primary",
-    icon: "text-blue-600",
-    title: "text-blue-800",
-    text: "text-blue-700",
+    wrap: "bg-blue-500/10 border-blue-500/20 text-blue-800 dark:text-blue-200",
+    icon: "text-primary",
+    title: "text-blue-900 dark:text-blue-100",
     sr: "Information",
   },
   success: {
-    wrap: "bg-gradient-to-br from-emerald-50 to-green-50 border-l-secondary",
-    icon: "text-green-600",
-    title: "text-green-800",
-    text: "text-green-700",
+    wrap: "bg-emerald-500/10 border-emerald-500/20 text-emerald-800 dark:text-emerald-200",
+    icon: "text-secondary",
+    title: "text-emerald-900 dark:text-emerald-100",
     sr: "Success",
   },
 } as const;
@@ -68,7 +65,7 @@ const v = map[variant];
       {title && (
         <h3 class={`font-display font-semibold text-lg mb-2 ${v.title}`}>{title}</h3>
       )}
-      <div class={`${v.text}`}>
+      <div>
         <slot />
       </div>
     </div>

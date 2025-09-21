@@ -1,0 +1,12 @@
+---
+interface Props {
+  kicker: string;
+  title: string;
+  class?: string;
+}
+const { kicker, title, class: className } = Astro.props;
+---
+<div class:list={["text-center", className]}>
+  <p class="text-sm font-medium uppercase tracking-wider text-secondary mb-2">{kicker}</p>
+  <h2 class="text-3xl sm:text-4xl font-display font-bold">{title}</h2>
+</div>

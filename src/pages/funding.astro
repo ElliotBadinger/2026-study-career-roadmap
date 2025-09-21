@@ -1,135 +1,77 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Stepper from "../components/Stepper.astro";
+import Section from "../components/Section.astro";
+import Surface from "../components/Surface.astro";
+import Button from "../components/ui/Button.astro";
 import Alert from "../components/ui/Alert.astro";
-import Card from "../components/ui/Card.astro";
-import Footnote from "../components/ui/Footnote.astro";
 import { funding } from "../content/funding";
-import { fundingRefs, toList } from "../content/references";
-import NsfasReadiness from "../components/islands/NsfasReadiness.jsx";
 ---
 
 <BaseLayout title="Funding Guide — Project Phoenix" description="NSFAS, Funza Lushaka, University bursaries, and learnerships—what you qualify for and how to apply.">
-  <section class="mb-8 text-center space-y-3">
-    <h1 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-gradient italic">Your Financial Guide</h1>
-    <p class="text-neutral/80 max-w-2xl mx-auto">
-      Understand funding pathways and prepare an application that’s complete, early, and stress‑free.
-    </p>
-  </section>
-
-  <section class="mb-10 grid gap-6 lg:grid-cols-2">
-    <div class="rounded-xl border border-base-300 bg-gradient-to-br from-blue-50 to-indigo-50 p-6">
-      <h2 class="font-display text-xl font-semibold mb-4 text-neutral">{funding.nsfas.title}</h2>
-      <div class="space-y-4 text-sm text-neutral/80">
-        <div class="rounded-lg border border-blue-200 bg-white p-4">
-          <h3 class="font-medium text-neutral mb-2">Eligibility</h3>
-          <ul class="list-disc ml-5 space-y-1">
-            {funding.nsfas.eligibility.map((e) => (
-              <li>{e.text}</li>
-            ))}
-          </ul>
-          {funding.nsfas.goodNewsRef && (
-            <p class="text-xs text-neutral/60 mt-2">
-              See application requirements.
-              <Footnote id={funding.nsfas.goodNewsRef} tooltip="NSFAS requirements" />
-            </p>
-          )}
-        </div>
-
-        <Alert variant="success" title="Good news" class="!p-4">
-          {funding.nsfas.goodNewsNote}
-          {funding.nsfas.goodNewsRef && (
-            <Footnote id={funding.nsfas.goodNewsRef} tooltip="NSFAS requirements" />
-          )}
-        </Alert>
-      </div>
+  <Section>
+    <Stepper currentPage="Funding" />
+    <div class="text-center max-w-3xl mx-auto mt-8">
+      <h1 class="text-4xl sm:text-5xl font-display font-bold mb-4 text-balance text-text-light-primary dark:text-text-dark-primary">
+        Your Financial Guide
+      </h1>
+      <p class="text-lg text-text-light-secondary dark:text-text-dark-secondary text-balance">
+        Understand funding pathways and prepare an application that’s complete, early, and stress-free.
+      </p>
     </div>
+  </Section>
 
-    <div class="rounded-xl border border-base-300 bg-gradient-to-br from-emerald-50 to-green-50 p-6">
-      <h2 class="font-display text-xl font-semibold mb-4 text-neutral">Other Funding Avenues</h2>
-      <div class="space-y-4 text-sm text-neutral/80">
-        <div class="rounded-lg border border-green-200 bg-white p-4">
-          <h3 class="font-medium text-neutral mb-1">{funding.otherAvenues.funza.title}</h3>
-          <p>{funding.otherAvenues.funza.description}</p>
-          {funding.otherAvenues.funza.refId && (
-            <p class="text-xs text-neutral/60 mt-2">
-              <Footnote id={funding.otherAvenues.funza.refId} tooltip="Funza Lushaka" />
-            </p>
-          )}
+  <Section title="Funding Avenues">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <Surface variant="s1" class="p-6">
+        <h3 class="font-display text-2xl font-bold mb-4 text-text-light-primary dark:text-text-dark-primary">{funding.nsfas.title}</h3>
+        <div class="space-y-4">
+          <Surface variant="s2" class="p-4">
+            <h4 class="font-semibold mb-2">Eligibility</h4>
+            <ul class="list-disc ml-5 space-y-1 text-sm text-neutral-subtle">
+              {funding.nsfas.eligibility.map((e) => <li>{e.text}</li>)}
+            </ul>
+          </Surface>
+          <Alert variant="success" title="Good News">
+            {funding.nsfas.goodNewsNote}
+          </Alert>
         </div>
-
-        <div class="rounded-lg border border-green-200 bg-white p-4">
-          <h3 class="font-medium text-neutral mb-1">{funding.otherAvenues.universityBursaries.title}</h3>
-          <p>{funding.otherAvenues.universityBursaries.description}</p>
+      </Surface>
+      <Surface variant="s1" class="p-6">
+        <h3 class="font-display text-2xl font-bold mb-4 text-text-light-primary dark:text-text-dark-primary">Other Funding Avenues</h3>
+        <div class="space-y-4">
+          <Surface variant="s2" class="p-4">
+            <h4 class="font-semibold mb-1">{funding.otherAvenues.funza.title}</h4>
+            <p class="text-sm text-neutral-subtle">{funding.otherAvenues.funza.description}</p>
+          </Surface>
+          <Surface variant="s2" class="p-4">
+            <h4 class="font-semibold mb-1">{funding.otherAvenues.universityBursaries.title}</h4>
+            <p class="text-sm text-neutral-subtle">{funding.otherAvenues.universityBursaries.description}</p>
+          </Surface>
+          <Surface variant="s2" class="p-4">
+            <h4 class="font-semibold mb-1">{funding.otherAvenues.learnerships.title}</h4>
+            <p class="text-sm text-neutral-subtle">{funding.otherAvenues.learnerships.description}</p>
+          </Surface>
         </div>
-
-        <div class="rounded-lg border border-green-200 bg-white p-4">
-          <h3 class="font-medium text-neutral mb-1">{funding.otherAvenues.learnerships.title}</h3>
-          <p>{funding.otherAvenues.learnerships.description}</p>
-        </div>
-      </div>
+      </Surface>
     </div>
-  </section>
+  </Section>
 
-  <section class="mb-12 rounded-xl border border-base-300 bg-white p-6">
-    <h2 class="font-display text-xl font-semibold mb-4">Choosing Your Institution: At a Glance</h2>
-    <div class="overflow-x-auto">
-      <table class="w-full border-collapse border border-base-300 text-sm">
-        <thead>
-          <tr class="bg-base-200">
-            <th scope="col" class="border border-base-300 p-3 text-left font-semibold">Institution Type</th>
-            <th scope="col" class="border border-base-300 p-3 text-left font-semibold">Focus</th>
-            <th scope="col" class="border border-base-300 p-3 text-left font-semibold">Qualifications</th>
-            <th scope="col" class="border border-base-300 p-3 text-left font-semibold">Learning Style</th>
-            <th scope="col" class="border border-base-300 p-3 text-left font-semibold">Best For</th>
-          </tr>
-        </thead>
-        <tbody>
-          {funding.institutionComparison.rows.map((row, idx) => (
-            <tr class={idx % 3 === 0 ? "bg-blue-50" : idx % 3 === 1 ? "bg-green-50" : "bg-purple-50"}>
-              <td class="border border-base-300 p-3 font-medium">{row.type}</td>
-              <td class="border border-base-300 p-3">{row.focus}</td>
-              <td class="border border-base-300 p-3">{row.qualifications}</td>
-              <td class="border border-base-300 p-3">{row.learningStyle}</td>
-              <td class="border border-base-300 p-3">{row.bestFor}</td>
-            </tr>
-          ))}
-        </tbody>
-        </table>
-    </div>
-  </section>
-
-  <section class="mb-12">
-    <h2 class="font-display text-xl font-semibold mb-3">NSFAS Application Checklist</h2>
-    <div class="grid gap-6 md:grid-cols-2">
-      <Card accent="blue">
-        <ul class="list-disc ml-5 space-y-1 text-sm text-neutral/80">
-          {funding.nsfasChecklist.left.map((i) => (
-            <li>{i.label}</li>
-          ))}
+  <Section title="Get Application-Ready">
+    <Alert variant="info" title="NSFAS Application Checklist">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6">
+        <ul class="list-disc ml-5 space-y-1 text-sm">
+          {funding.nsfasChecklist.left.map((item) => <li>{item.label}</li>)}
         </ul>
-      </Card>
-      <Card accent="green">
-        <ul class="list-disc ml-5 space-y-1 text-sm text-neutral/80">
-          {funding.nsfasChecklist.right.map((i) => (
-            <li>{i.label}</li>
-          ))}
+        <ul class="list-disc ml-5 space-y-1 text-sm">
+          {funding.nsfasChecklist.right.map((item) => <li>{item.label}</li>)}
         </ul>
-      </Card>
-    </div>
-  </section>
-
-  <section class="mb-12">
-    <NsfasReadiness client:load />
-  </section>
-
-  <section id="references" class="mt-8">
-    <h3 class="font-display text-xl font-semibold mb-3">References</h3>
-    <ol class="list-decimal ml-5 space-y-1 text-sm text-neutral/80">
-      {toList(fundingRefs).map((r) => (
-        <li id={`ref-${r.id}`}>
-          <a class="text-primary" href={r.url}>{r.title}</a>
-        </li>
-      ))}
-    </ol>
-  </section>
+      </div>
+      <div class="text-center mt-6">
+        <Button href="/roadmap" variant="secondary">
+          Check Roadmap for Prerequisites
+        </Button>
+      </div>
+    </Alert>
+  </Section>
 </BaseLayout>

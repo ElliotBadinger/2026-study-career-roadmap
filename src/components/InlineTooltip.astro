@@ -1,0 +1,16 @@
+---
+// A simple, CSS-only tooltip for now. Can be enhanced with JS later if needed.
+interface Props {
+  tip: string;
+}
+const { tip } = Astro.props;
+---
+<span class="relative group">
+  <slot />
+  <span class="absolute bottom-full left-1/2 -translate-x-1/2 z-10 mb-2 w-max max-w-xs
+               bg-neutral text-white text-xs rounded py-1 px-2
+               opacity-0 group-hover:opacity-100 group-focus:opacity-100
+               transition-opacity duration-200 pointer-events-none dark:bg-slate-700">
+    {tip}
+  </span>
+</span>

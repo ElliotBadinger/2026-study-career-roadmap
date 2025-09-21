@@ -45,20 +45,20 @@ export default function InteractiveTimeline({
   }
 
   return (
-    <section className="rounded-xl border border-base-300 bg-white p-5 sm:p-6">
+    <section className="rounded-xl border border-border-light bg-bg-light-primary dark:border-border-dark dark:bg-bg-dark-surface p-5 sm:p-6">
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4">
-        <h2 className="font-display text-lg sm:text-xl font-semibold text-neutral">{title}</h2>
+        <h2 className="font-display text-lg sm:text-xl font-semibold text-text-light-primary dark:text-text-dark-primary">{title}</h2>
         <div className="flex gap-2">
           <button
             type="button"
-            className="text-xs px-3 py-1.5 rounded border border-base-300 hover:bg-base-200"
+            className="text-xs px-3 py-1.5 rounded border border-border-light hover:bg-bg-light-secondary dark:border-border-dark dark:hover:bg-bg-dark-primary"
             onClick={() => setAll(true)}
           >
             Expand all
           </button>
           <button
             type="button"
-            className="text-xs px-3 py-1.5 rounded border border-base-300 hover:bg-base-200"
+            className="text-xs px-3 py-1.5 rounded border border-border-light hover:bg-bg-light-secondary dark:border-border-dark dark:hover:bg-bg-dark-primary"
             onClick={() => setAll(false)}
             disabled={!allOpen && ids.every((id) => !open[id])}
           >
@@ -67,7 +67,7 @@ export default function InteractiveTimeline({
         </div>
       </div>
 
-      <ol className="relative border-l-2 border-base-300 pl-5 space-y-4">
+      <ol className="relative border-l-2 border-border-light dark:border-border-dark pl-5 space-y-4">
         {phases.map((p, idx) => {
           const isOpen = !!open[p.id];
           return (
@@ -79,17 +79,17 @@ export default function InteractiveTimeline({
 
               <div className="flex items-start justify-between gap-4">
                 <div>
-                  <h3 className="font-medium text-neutral">
+                  <h3 className="font-medium text-text-light-primary dark:text-text-dark-primary">
                     {p.title ?? `Phase ${idx + 1}`}
                   </h3>
                   {p.period && (
-                    <p className="text-xs text-neutral/60 mt-0.5">{p.period}</p>
+                    <p className="text-xs text-text-light-secondary dark:text-text-dark-secondary mt-0.5">{p.period}</p>
                   )}
                 </div>
                 <div>
                   <button
                     type="button"
-                    className="text-xs px-2 py-1 rounded border border-base-300 hover:bg-base-200"
+                    className="text-xs px-2 py-1 rounded border border-border-light hover:bg-bg-light-secondary dark:border-border-dark dark:hover:bg-bg-dark-primary"
                     aria-expanded={isOpen}
                     aria-controls={`${p.id}-panel`}
                     onClick={() => toggle(p.id)}
@@ -111,11 +111,11 @@ export default function InteractiveTimeline({
                 }}
               >
                 {p.summary ? (
-                  <p className="text-sm text-neutral/80 bg-base-200 border border-base-300 rounded-lg p-3">
+                  <p className="text-sm text-text-light-secondary dark:text-text-dark-secondary bg-bg-light-secondary border border-border-light dark:bg-bg-dark-primary dark:border-border-dark rounded-lg p-3">
                     {p.summary}
                   </p>
                 ) : (
-                  <p className="text-sm text-neutral/60">
+                  <p className="text-sm text-text-light-secondary dark:text-text-dark-secondary">
                     No summary provided. Use the checklist below to track actions for this phase.
                   </p>
                 )}

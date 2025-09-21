@@ -43,7 +43,7 @@ export const home: HomeContent = {
   countdown: {
     label: "Exam Sprint countdown",
     // SAST (UTC+02:00)
-    target: "2025-11-01T08:00:00+02:00",
+    target: "2025-10-01T08:00:00+02:00",
   },
   quickLinksPrimary: [
     {

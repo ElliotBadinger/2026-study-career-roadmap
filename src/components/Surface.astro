@@ -1,0 +1,17 @@
+---
+interface Props {
+  variant?: "s1" | "s2";
+  class?: string;
+  href?: string;
+  id?: string;
+}
+const { variant = "s1", class: className, href, id } = Astro.props;
+
+const Tag = href ? "a" : "div";
+const surfaceClass = variant === "s1" ? "surface-s1" : "surface-s2";
+const interactiveClass = href ? "interactive-card" : "";
+---
+
+<Tag href={href} id={id} class:list={[surfaceClass, interactiveClass, className]}>
+  <slot />
+</Tag>
