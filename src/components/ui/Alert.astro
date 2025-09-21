@@ -1,0 +1,76 @@
+---
+interface Props {
+  variant?: "urgent" | "info" | "success";
+  title?: string;
+  class?: string;
+}
+const {
+  variant = "info",
+  title,
+  class: className = "",
+} = Astro.props as Props;
+
+const base = "rounded-xl p-6 border-l-4";
+const map = {
+  urgent: {
+    wrap: "bg-gradient-to-br from-red-50 to-rose-50 border-l-accent",
+    icon: "text-red-600",
+    title: "text-red-800",
+    text: "text-red-700",
+    sr: "Urgent",
+  },
+  info: {
+    wrap: "bg-gradient-to-br from-indigo-50 to-blue-50 border-l-primary",
+    icon: "text-blue-600",
+    title: "text-blue-800",
+    text: "text-blue-700",
+    sr: "Information",
+  },
+  success: {
+    wrap: "bg-gradient-to-br from-emerald-50 to-green-50 border-l-secondary",
+    icon: "text-green-600",
+    title: "text-green-800",
+    text: "text-green-700",
+    sr: "Success",
+  },
+} as const;
+
+const v = map[variant];
+---
+
+<div class={`${base} ${v.wrap} ${className}`} role={variant === "urgent" ? "alert" : undefined}>
+  <div class="flex items-start gap-4">
+    <!-- Icon -->
+    <div class={`shrink-0 ${v.icon}`} aria-hidden="true">
+      {
+        variant === "urgent" ? (
+          // Exclamation Triangle
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v4m0 4h.01M10.29 3.86l-8.1 14A2 2 0 003.9 21h16.2a2 2 0 001.71-3.14l-8.1-14a2 2 0 00-3.42 0z"/>
+          </svg>
+        ) : variant === "success" ? (
+          // Check Circle
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        ) : (
+          // Information Circle
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M12 6a9 9 0 100 18 9 9 0 000-18z"/>
+          </svg>
+        )
+      }
+      <span class="sr-only">{v.sr}</span>
+    </div>
+
+    <!-- Content -->
+    <div>
+      {title && (
+        <h3 class={`font-display font-semibold text-lg mb-2 ${v.title}`}>{title}</h3>
+      )}
+      <div class={`${v.text}`}>
+        <slot />
+      </div>
+    </div>
+  </div>
+</div>

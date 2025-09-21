@@ -1,0 +1,60 @@
+---
+const links = [
+  { href: "/", label: "Home" },
+  { href: "/roadmap", label: "Roadmap" },
+  { href: "/compass", label: "Career Compass" },
+  { href: "/study-hub", label: "Study Hub" },
+  { href: "/funding", label: "Funding" },
+];
+
+const current = Astro.url.pathname || "/";
+function isActive(href: string) {
+  return current === href || (href !== "/" && current.startsWith(href));
+}
+---
+<nav class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-base-300">
+  <div class="container-safe h-16 flex items-center justify-between">
+    <!-- Brand -->
+    <a href="/" class="flex items-center gap-2 font-display text-xl">
+      <span class="inline-block h-6 w-6 rounded bg-gradient-to-br from-primary to-secondary"></span>
+      <span class="text-gradient italic">Phoenix</span>
+    </a>
+
+    <!-- Desktop nav -->
+    <ul class="hidden md:flex items-center gap-6 text-sm">
+      {links.map((l) => (
+        <li>
+          <a
+            href={l.href}
+            aria-current={isActive(l.href) ? "page" : undefined}
+            class={`px-2 py-1 rounded transition-colors ${
+              isActive(l.href)
+                ? "text-primary font-semibold underline underline-offset-4"
+                : "text-neutral/80 hover:text-neutral"
+            }`}
+          >{l.label}</a>
+        </li>
+      ))}
+    </ul>
+
+    <!-- Mobile menu -->
+    <details class="md:hidden relative">
+      <summary class="list-none cursor-pointer rounded px-3 py-2 border border-base-300 bg-white/70 hover:bg-white transition-colors text-sm flex items-center gap-2">
+        <span class="i-menu"></span> Menu
+      </summary>
+      <ul class="absolute right-0 mt-2 w-56 bg-white rounded-xl border border-base-300 shadow-card p-2">
+        {links.map((l) => (
+          <li>
+            <a
+              href={l.href}
+              class={`block px-3 py-2 rounded hover:bg-base-200 ${
+                isActive(l.href) ? "text-primary font-semibold" : "text-neutral/90"
+              }`}
+              aria-current={isActive(l.href) ? "page" : undefined}
+            >{l.label}</a>
+          </li>
+        ))}
+      </ul>
+    </details>
+  </div>
+</nav>
